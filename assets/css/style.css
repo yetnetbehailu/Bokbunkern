@@ -18,9 +18,12 @@
     /* --text-color: ; Not yet decided */
     --dark-blue: #507A87;
     --light-blue: #C9DEF1;
-    --dark-lilac: #AF84DA;
+    --dark-lilac: #79559e;
+    --darkest-lilac: #4f2c72;
     --light-lilac: #D8C7EC;
     --light-yellow: #F5E79D;
+    --white: #f8f9fa;
+
 
     --primary-font: "Unna", serif;
     --secondary-font:"Bricolage Grotesque", sans-serif;
@@ -34,4 +37,76 @@ body {
 
 h1, h2, h3 {
     font-family: var(--secondary-font);
+}
+
+/* ===========================
+   Homepage
+============================== */
+
+/* Navbar styling
+   ===========================*/
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--darkest-lilac);
+}
+
+.navbar {
+    padding: 0;
+    font-family: var(--secondary-font);
+}
+
+.nav-link {
+    padding-bottom: 0.3rem !important;
+    position: relative;
+    color: var(--darkest-lilac);
+}
+
+.nav-link.active {
+    color: var(--darkest-lilac) !important;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 7px;
+    height: 2px;
+    background-color: var(--darkest-lilac);
+    border-radius: 2px;
+}
+
+.nav-link:not(.active) {
+    transition: all 0.25s ease;
+}
+
+.nav-link:not(.active):hover {
+    color: var(--dark-lilac);
+    text-shadow: 0 2px 8px rgb(115 58 172 / 35%);
+    transform: translateY(-1px);
+}
+
+.btn-membership {
+    border-radius: 0;
+    background-color: var(--dark-lilac);
+    padding: 1.1rem 1.1rem 1rem;
+    border: none;
+    color: var(--white);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-membership:hover {
+    background-color: var(--darkest-lilac);
+    color: var(--light-yellow);
+}
+
+/* Hero section
+   ===========================*/
+.hero-bg {
+    background-image: url(../images/hero-bg.webp);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 }
