@@ -15,8 +15,8 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid pe-0">
 
-                <a class="navbar-brand d-flex" href="#">
-                    <img src="" alt="">
+                <a class="navbar-brand d-flex align-items-center p-0" href="index.php">
+                    <img class="logo-img me-3" src="assets/images/logo-bokbunkern.webp" alt="">
                     <span class="logo-text">Bokbunkern</span>
                 </a>
 
@@ -27,7 +27,7 @@
 
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
                         <li class="nav-item">
-                            <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="#">Hem</a>
+                            <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="index.php">Hem</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="#">Böcker</a>
@@ -55,6 +55,22 @@
     <main>
         <section class="hero-bg container-fluid">
             <div class="container hero-content">
+
+                <div class="row align-items-center">
+                    <div class="col-md-6 hero-text text-center">
+                        <h1>En bok är bättre när den diskuteras</h1>
+                        <p>Bokbunkern samlar läsare som vill upptäcka nya böcker,
+                            delta i livliga forumdiskussioner och hitta en gemenskap
+                            bland andra bokälskare.
+                        </p>
+                        <a href="#" class="btn btn-explore-books">Utforska böcker</a>
+                    </div>
+
+                    <!-- Carousel -->
+                    <div class="col-md-6 book-carousel">
+
+                    </div>
+                </div>
 
             </div>
         </section>

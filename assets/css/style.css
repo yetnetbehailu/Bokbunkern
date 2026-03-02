@@ -64,6 +64,8 @@ h1, h2, h3 {
 
 .nav-link.active {
     color: var(--darkest-lilac) !important;
+    pointer-events: none;
+    cursor: default;
 }
 
 .nav-link.active::after {
@@ -102,6 +104,11 @@ h1, h2, h3 {
     color: var(--light-yellow);
 }
 
+.logo-img {
+    width: auto;
+    height: 4rem;
+}
+
 /* Hero section
    ===========================*/
 .hero-bg {
@@ -109,4 +116,34 @@ h1, h2, h3 {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    background-color: var(--white);
+    border-radius: 25px;
+    max-width: 60ch;
+    padding: 1.5rem 1.4rem;
+    color: var(--darkest-lilac);
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+.hero-text h1{
+    font-size: 2.2rem;
+}
+
+.btn-explore-books {
+    border-radius: 25px;
+    background-color: var(--darkest-lilac);
+    color: var(--white);
+    font-size: 1.2rem;
+
+    transition: background-color 0.25s ease ,color 0.25s ease;
+}
+
+.btn-explore-books:hover{
+    background-color: var(--darkest-lilac);
+    color: var(--light-yellow);
 }
