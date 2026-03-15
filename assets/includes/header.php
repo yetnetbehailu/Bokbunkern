@@ -54,9 +54,9 @@ require_once 'assets/functions/sessions.login.php';
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="#">FAQ</a>
-                        <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
-                        <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare
                         </li>
+                        <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
+                        <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">

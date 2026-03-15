@@ -11,6 +11,7 @@ echo "Databasuppkoppling fungerar hehehhe!";
 
 
 <main class="container">
+ 
   <!-- Search and filter -->
   <section class="my-4">
     <div class="search-section p-4 rounded-3">
