@@ -59,10 +59,45 @@ require_once 'assets/functions/sessions.login.php';
                         <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>
                     </ul>
 
-                    <div class="d-flex align-items-center gap-4">
-                        <a class="nav-link fs-5 p-2" href="#">Logga in</a>
-                        <a class="btn btn-membership fs-5" href="#">Bli medlem</a>
-                    </div>
+                    <?php
+                    // Checks if user is logged in
+                    if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
+                        //shows loggout button if user is logged in
+                        echo
+                        '<a href="logout.php" class="btn btn-danger d-flex align-items-center"><i class="fa-solid fa-right-from-bracket pe-2"></i> Logga ut
+                        </a>
+                        ';
+                    } else {
+                        //shows login button if user is not logged in
+                        echo '    
+                    
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-primary dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-circle-user pe-2"></i> Logga in
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" style="width: 300px;">
+                                <form action="index.php" method="post" class="px-4 py-3">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-post</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Lösenord</label>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                    <button type="submit" class="btn btn-success" name="login">Logga in</button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Ny här? Registrera!</a>
+                                <a class="dropdown-item" href="#">Glömt lösenord?</a>
+                            </div>
+                        </li>
+                    </ul>
+                    ';
+                    }
+                    ?>
+
                 </div>
             </div>
         </nav>

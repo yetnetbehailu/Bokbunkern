@@ -11,7 +11,37 @@ echo "Databasuppkoppling fungerar hehehhe!";
 
 
 <main class="container">
- 
+  <style>
+    .book-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--bs-box-shadow-lg) !important;
+    }
+
+    .book-card img {
+      transition: transform .3s ease;
+    }
+
+    .book-card:hover img {
+      transform: scale(1.03);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .book-card,
+      .book-card img {
+        transition: none;
+      }
+
+      .book-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+
   <!-- Search and filter -->
   <section class="my-4">
     <div class="search-section p-4 rounded-3">

@@ -2,7 +2,7 @@
 //checks whether submit button has been set
 if (isset($_POST['login'])) {
 
-//Checks whether e-mail and password fields are empty
+    //Checks whether e-mail and password fields are empty
     if (empty($_POST['email']) || empty($_POST['password'])) {
         //Redriect user to error page
         header('Location: index.php?error=empty');
@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':password', $password);
-    $stmt->execute();   
+    $stmt->execute();
 
     //Counts rows returned from database
     $count = $stmt->rowCount();
@@ -33,19 +33,17 @@ if (isset($_POST['login'])) {
     if ($count > 0) {
         //Save results to variable
         $row = $stmt->fetch();
-    // Creates sessions varibles with user id
+        // Creates sessions varibles with user id
         $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['firstname'] = $row['firstname'];
+        $_SESSION['lastname'] = $row['lastname'];
         // Redirect user to index page
         header('Location: ../../index.php');
         exit();
     } else {
-       // Redirect user to error page
+        // Redirect user to error page
 
-header('Location: ../../index.php?action=error');
-exit();
+        header('Location: ../../index.php?action=error');
+        exit();
+    }
 }
-}
-?>
-
-
-
