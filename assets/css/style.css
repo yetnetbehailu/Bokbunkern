@@ -35,6 +35,7 @@ body {
     font-family: var(--primary-font);
 }
 
+
 h1, h2, h3 {
     font-family: var(--secondary-font);
 }
@@ -146,4 +147,26 @@ h1, h2, h3 {
 .btn-explore-books:hover{
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
+}
+
+/* ==========================================
+   Book page colors
+============================================= */
+body.books-page {
+    background-color: #f8f9fa;
+}
+.search-section {
+  background-color: var(--light-lilac);
+}
+.btn-primary {
+  background-color: var(--dark-lilac);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--darkest-lilac);
+}
+.card {
+  background-color: white;
+  border: none;
 }
