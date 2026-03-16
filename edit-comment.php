@@ -18,7 +18,7 @@ require_once 'assets/includes/header.php';
 ?>
 
 
-<main class="bg-cust1">
+<main>
 
     <!-- php sucsess massage -->
     <?php
@@ -44,7 +44,7 @@ require_once 'assets/includes/header.php';
     </div>
 
     <!-- book description -->
-    <div class="container p-4 text-bg-light border rounded">
+    <div class="container p-4 text-bg-light desc-box rounded">
         <div class="row align-items-start">
             <div class="col-2">
                 <img src="assets/images/the-picture-of-dorian-gray.jpg"

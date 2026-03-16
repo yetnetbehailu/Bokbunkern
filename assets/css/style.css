@@ -599,6 +599,11 @@ body.books-page {
     background-color: var(--light-lilac);
 }
 
+/* shadow for book description box */
+.desc-box {
+    box-shadow: var(--bs-box-shadow-lg);
+}
+
 /* background color for comment field */
 .bg-cust2 {
     background-color: var(--white);
