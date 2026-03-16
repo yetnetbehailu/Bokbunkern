@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['remove'])) {
+if (isset($_POST['remove']) && !empty($_POST['comment_id'])) {
     //create a query
     $sql = 'DELETE FROM detail WHERE comment_id = :comment_id';
 
@@ -7,7 +7,7 @@ if (isset($_POST['remove'])) {
     $stmt = $dbh->prepare($sql);
 
     //connect form fields with db container
-    $stmt->bindValue(':comment_id', $_POST['comment_id']);
+    $stmt->bindValue(':comment_id', $_POST['comment_id'], PDO::PARAM_INT);
 
     //Sends the query to the database
     try {

@@ -3,13 +3,20 @@
 require_once 'assets/config/db.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
+//get specific comment to edit
+require_once 'assets/functions/select-comment-id.php';
+//include ability to delete comments
+require_once 'assets/functions/delete-comment-function.php';
 //include ability to showcase comments
 require_once 'assets/functions/view-comments.php';
 //include ability to uppdate comments
 require_once 'assets/functions/comment-update.php';
+
 //include sessions
 require_once 'assets/functions/sessions.login.php';
-// Include header
+?>
+<?php
+//unclude header
 require_once 'assets/includes/header.php';
 ?>
 
@@ -50,7 +57,7 @@ require_once 'assets/includes/header.php';
     <!-- Start of detail page -->
     <!-- back button -->
     <div class="m-3">
-        <a src="" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
+        <a href="books.php" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
     </div>
 
     <!-- book description -->
@@ -76,7 +83,7 @@ require_once 'assets/includes/header.php';
     <?php if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])): ?>
         <div class="container">
             <!-- add comment button -->
-            <div class="mx-5 mb-3 mt-5 row bg-cust2 rounded p-2">
+            <div class="mx-5 mb-3 mt-5 row bg-cust1 rounded p-2">
                 <form action="detail.php" method="post">
                     <div class="row">
                         <div class="col-10">
@@ -127,8 +134,10 @@ require_once 'assets/includes/header.php';
                     </p>
                     <div class="row justify-content-between">
                         <div class="col-10"> <!-- edit and delete button for comment -->
+
                             <a href="edit-comment.php?edit=' . $row['comment_id'] . '" class="me-4 edt-btn"><i class="fa-solid fa-pen-to-square ic"></i> Redigera</a>
                             <a href="delete-comment.php?delete=' . $row['comment_id'] . '" class="edt-btn"><i class="fa-solid fa-trash-can ic"></i> Radera</a>
+                            
                         </div>
                         <div class="col-2">
                             <div class="col-2">
@@ -149,37 +158,6 @@ require_once 'assets/includes/header.php';
             ';
     }
     ?>
-
-
-
-
-
-
-    <div class="bg-cust2 p-3 rounded container">
-        <div class="row p-3 border m-2 bg-white border rounded">
-            <div class="col-1 fa-3x">
-                <i class="fa-solid fa-circle-user"></i>
-            </div>
-            <div class="col-11">
-                <p class="fw-bold">Lukas Andersson <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
-                <p>
-                    WOW, alltså vilken bok. Trodde aldrig att jag skulle
-                    tycka om en klassiker men denna fick mig verkligen
-                    att ändra mig.
-                </p>
-                <div class="row justify-content-between">
-                    <div class="col-10"> <!-- edit and delete button for comment -->
-                        <a href="edit-comment.php" class="me-4 edt-btn"><i class="fa-solid fa-pen-to-square ic"></i> Redigera</a>
-                        <a href="delete-comment.php" class="edt-btn"><i class="fa-solid fa-trash-can ic"></i> Radera</a>
-                    </div>
-                    <div class="col-2">
-                        <div class="col-2">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 </main>
 
