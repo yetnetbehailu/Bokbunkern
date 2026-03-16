@@ -26,16 +26,20 @@
 
 
     --primary-font: "Unna", serif;
-    --secondary-font:"Bricolage Grotesque", sans-serif;
+    --secondary-font: "Bricolage Grotesque", sans-serif;
 }
 
 body {
-    font-size: 1rem; /* 16px default */
+    font-size: 1rem;
+    /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     font-family: var(--secondary-font);
 }
 
@@ -130,7 +134,7 @@ h1, h2, h3 {
     line-height: 1.7rem;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-size: 2.2rem;
 }
 
@@ -140,10 +144,76 @@ h1, h2, h3 {
     color: var(--white);
     font-size: 1.2rem;
 
-    transition: background-color 0.25s ease ,color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.btn-explore-books:hover{
+.btn-explore-books:hover {
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
+}
+
+/* ==========================================
+   Book page colors
+============================================= */
+body.books-page {
+    background-color: #f8f9fa;
+}
+
+.search-section {
+    background-color: var(--light-lilac);
+}
+
+.btn-primary {
+    background-color: var(--dark-lilac);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--darkest-lilac);
+}
+
+.card {
+    background-color: white;
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-grid .card {
+    box-shadow: 0 6px 14px rgb(79 44 114 / 12%);
+}
+
+.book-grid .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 30px rgb(79 44 114 / 22%);
+}
+
+.book-grid .card img {
+    transition: transform 0.35s ease;
+}
+
+.book-grid .card:hover img {
+    transform: scale(1.04);
+}
+
+.book-grid .card-title {
+    transition: color 0.25s ease;
+}
+
+.book-grid .card:hover .card-title {
+    color: var(--darkest-lilac);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .book-grid .card,
+    .book-grid .card img,
+    .book-grid .card-title {
+        transition: none;
+    }
+
+    .book-grid .card:hover {
+        transform: none;
+    }
 }

@@ -1,3 +1,17 @@
+<?php
+//Init session management
+session_start();
+
+// show all errors for debugging
+require_once 'assets/includes/display_errors.php';
+
+// connect to database
+require_once 'assets/config/db.php';
+
+// Process login to database
+require_once 'assets/functions/sessions.login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -10,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="<?php echo isset($pageClass) ? htmlspecialchars($pageClass, ENT_QUOTES, 'UTF-8') : ''; ?>">
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid pe-0">
@@ -41,12 +55,15 @@
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="#">FAQ</a>
                         </li>
+                        <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
+                        <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
                         <a class="nav-link fs-5 p-2" href="#">Logga in</a>
                         <a class="btn btn-membership fs-5" href="#">Bli medlem</a>
                     </div>
+
                 </div>
             </div>
         </nav>
