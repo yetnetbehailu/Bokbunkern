@@ -4,9 +4,6 @@ $pageClass = 'books-page';
 
 // include header and navigation
 require_once 'assets/includes/header.php';
-
-echo "Databasuppkoppling fungerar hehehhe!";
-
 ?>
 
 

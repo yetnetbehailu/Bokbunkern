@@ -77,7 +77,7 @@ require_once 'assets/functions/sessions.login.php';
                                 </a>
 
                                 <div class="dropdown-menu start-50 translate-middle-x mt-2 p-4" style="width: 270px;">
-                                    <form action="index.php" method="post">
+                                    <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? 'index.php', ENT_QUOTES, 'UTF-8'); ?>" method="post">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">E-post</label>
                                             <input type="email" class="form-control" name="email" id="email">
