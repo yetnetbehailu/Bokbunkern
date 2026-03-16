@@ -7,12 +7,6 @@ require_once 'assets/functions/comment-to-database.php';
 require_once 'assets/functions/view-comments.php';
 //include ability to uppdate comments
 require_once 'assets/functions/comment-update.php';
-//get specific comment to edit
-require_once 'assets/functions/select-comment-id.php';
-//include ability to delete comments
-require_once 'assets/functions/delete-comment-function.php';
-// Include header
-require_once 'assets/includes/header.php';
 //include sessions
 require_once 'assets/functions/sessions.login.php';
 // Include header
