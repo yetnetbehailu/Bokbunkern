@@ -9,5 +9,5 @@ if (isset($_GET['edit'])) {
     //sends query to database
     $stmt->execute();
     //add all information about the comment to variables
-    $row = $stmt->fetch(); 
+    $row = $stmt->fetch();
 }

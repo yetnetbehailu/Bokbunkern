@@ -1,7 +1,8 @@
 <?php
-session_start();
+// Include header
+require_once 'assets/includes/header.php';
 //include database connection
-require_once 'db.php';
+require_once 'assets/config/db.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
 //include ability to showcase comments
@@ -12,6 +13,10 @@ require_once 'assets/functions/comment-update.php';
 require_once 'assets/functions/select-comment-id.php';
 //include ability to delete comments
 require_once 'assets/functions/delete-comment-function.php';
+// Include header
+require_once 'assets/includes/header.php';
+//include sessions
+require_once 'assets/functions/sessions.login.php';
 // Include header
 require_once 'assets/includes/header.php';
 ?>
@@ -60,26 +65,16 @@ require_once 'assets/includes/header.php';
     <div class="container p-4 text-bg-light border rounded">
         <div class="row align-items-start">
             <div class="col-2">
-                <img src="assets/images/the-picture-of-dorian-gray.jpg"
+                <img src="assets/images/acotar.jpg"
                     class="img-thumbnail"
-                    alt="En bild på bokomslaget till boken The picture of dorian grey. 
-                    En man i vit kavaj stående vilande med arbågen mot en pelare">
+                    alt="En bild på bokomslaget till boken acotar.">
             </div>
             <div class="col-10">
-                <header class="fs-4 fw-bold">The picture of dorian grey</header>
-                <p>'A triumph of execution ... one of the best narratives of
-                    the "double life" of a Victorian gentleman' Peter Ackroyd</p>
-                <p>Oscar Wilde's alluring novel of decadence and sin was a
-                    succès de scandale on publication. It follows Dorian Gray
-                    who, enthralled by his own exquisite portrait, exchanges
-                    his soul for eternal youth and beauty. Influenced by his
-                    friend Lord Henry Wotton, he is drawn into a corrupt double
-                    life, indulging his desires in secret while remaining a
-                    gentleman in the eyes of polite society. Only his portrait
-                    bears the traces of his depravity. This definitive edition
-                    includes a selection of contemporary reviews condemning
-                    the novel's immorality.</p>
-                <p>Edited with an Introduction and notes by ROBERT MIGHALL</p>
+                <header class="fs-4 fw-bold">A court of thorns and roses</header>
+                <p>en romantisk fantasyroman och första delen i en populär bokserie.</p>
+                <p>Boken handlar om Feyre Archeron, en ung kvinna som lever i fattigdom med sin familj. När hon jagar i skogen dödar hon en varg för att kunna försörja dem. Men vargen visar sig egentligen vara en fae (en magisk varelse).
+                    Som straff kommer en mäktig fae vid namn Tamlin och tar Feyre till sitt magiska rike Prythian. Hon tvingas bo i hans hov, men upptäcker snart att världen av fae är både farlig och fascinerande.</p>
+                <p>Boken är löst inspirerad av sagan Skönheten och odjuret, men utvecklas till en större fantasyhistoria med politiska intriger och mörkare teman i senare böcker.</p>
                 <p><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
             </div>
         </div>

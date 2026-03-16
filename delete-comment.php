@@ -1,6 +1,8 @@
 <?php
+// Include header
+require_once 'assets/includes/header.php';
 //include database connection
-require_once 'db.php';
+require_once 'assets/config/db.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
 // Include header
@@ -9,6 +11,10 @@ require_once 'assets/includes/header.php';
 require_once 'assets/functions/view-comments.php';
 //get specific comment to edit
 require_once 'assets/functions/select-comment-id.php';
+//include sessions 
+require_once 'assets/functions/sessions.login.php';
+// Include header
+require_once 'assets/includes/header.php';
 ?>
 
 
@@ -82,7 +88,7 @@ require_once 'assets/functions/select-comment-id.php';
         <div class="bg-cust2 p-3 rounded container">
             <div class="row p-3 border m-2 bg-white border rounded">
                 <p>Är du säker på att du vill radera denna kommentaren?</p>
-                <p><?php echo ucwords($row['firstname']) . ' ' . ucwords($row['lastname']); ?></p>
+                <p><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></p>
 
                 <div class="row justify-content-between">
                     <input type="hidden" name="comment_id" value="<?php echo $row['comment_id']; ?>">

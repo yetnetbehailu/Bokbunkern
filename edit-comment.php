@@ -1,18 +1,20 @@
 <?php
-session_start();
-//include database connection
-require_once 'db.php';
-//register information to database
-require_once 'assets/functions/comment-to-database.php';
 // Include header
 require_once 'assets/includes/header.php';
+//include database connection
+require_once 'assets/config/db.php';
+//register information to database
+require_once 'assets/functions/comment-to-database.php';
 //include ability to showcase comments
 require_once 'assets/functions/view-comments.php';
 //include ability to uppdate comments
 require_once 'assets/functions/comment-update.php';
 //get specific comment to edit
 require_once 'assets/functions/select-comment-id.php';
-//include ability to delete comments
+//include sessions
+require_once 'assets/functions/sessions.login.php';
+// Include header
+require_once 'assets/includes/header.php';
 ?>
 
 

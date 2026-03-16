@@ -47,7 +47,7 @@ require_once 'assets/functions/sessions.login.php';
                             <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="index.php">Hem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Böcker</a>
+                            <a class="nav-link fs-5" href="books.php">Böcker</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="#">Forum</a>
