@@ -53,10 +53,10 @@ require_once 'assets/functions/sessions.login.php';
                             <a class="nav-link fs-5" href="#">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Om oss</a>
+                            <a class="nav-link fs-5" href="about.us.php">Om oss</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">FAQ</a>
+                            <a class="nav-link fs-5" href="questions.php">FAQ</a>
                         </li>
                         <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
                         <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>

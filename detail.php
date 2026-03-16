@@ -1,6 +1,4 @@
 <?php
-// Include header
-require_once 'assets/includes/header.php';
 //include database connection
 require_once 'assets/config/db.php';
 //register information to database
