@@ -26,16 +26,19 @@
 
 
     --primary-font: "Unna", serif;
-    --secondary-font:"Bricolage Grotesque", sans-serif;
+    --secondary-font: "Bricolage Grotesque", sans-serif;
 }
 
 body {
-    font-size: 1rem; /* 16px default */
+    font-size: 1rem;
+    /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--secondary-font);
 }
 
@@ -130,7 +133,7 @@ h1, h2, h3 {
     line-height: 1.7rem;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-size: 2.2rem;
 }
 
@@ -140,10 +143,62 @@ h1, h2, h3 {
     color: var(--white);
     font-size: 1.2rem;
 
-    transition: background-color 0.25s ease ,color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.btn-explore-books:hover{
+.btn-explore-books:hover {
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
+}
+
+
+
+/* ===========================
+   Detail page
+============================== */
+
+/* Custom button in css */
+.btnc {
+    text-decoration: none;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.btnc:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/* edit and delete button */
+.edt-btn {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* ikon color */
+.ic {
+    color: var(--darkest-lilac);
+}
+
+
+/* background color for detail page */
+.bg-cust1 {
+    background-color: var(--light-lilac);
+}
+
+/* background color for comment field */
+.bg-cust2 {
+    background-color: var(--white);
+}
+
+/* background color for "no comments" alert */
+.bg-cust3 {
+    background-color: var(--dark-lilac);
 }
