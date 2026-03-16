@@ -152,9 +152,57 @@ h3 {
     color: var(--light-yellow);
 }
 
+
+
+/* ===========================
+   Detail page
+
+/* Custom button in css */
+.btnc {
+    text-decoration: none;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.btnc:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/* edit and delete button */
+.edt-btn {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* ikon color */
+.ic {
+    color: var(--darkest-lilac);
+}
+
+
+/* background color for detail page */
+.bg-cust1 {
+    background-color: var(--light-lilac);
+}
+
+/* background color for comment field */
+.bg-cust2 {
+    background-color: var(--white);
+}
+
+/* background color for "no comments" alert */
+.bg-cust3 {
+    background-color: var(--dark-lilac);
 /* ==========================================
    Book page colors
-============================================= */
 body.books-page {
     background-color: #f8f9fa;
 }
