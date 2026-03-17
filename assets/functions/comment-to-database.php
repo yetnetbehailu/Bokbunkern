@@ -1,7 +1,7 @@
 <?php
 // Ensure session data is available when this file is included
 if (session_status() === PHP_SESSION_NONE) {
-    (session_start());
+    session_start();
 }
 
 if (isset($_POST['register']) && !empty($_SESSION['user_id'])) {

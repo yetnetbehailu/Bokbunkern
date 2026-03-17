@@ -11,7 +11,6 @@ require_once 'assets/config/db.php';
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="sv">
 

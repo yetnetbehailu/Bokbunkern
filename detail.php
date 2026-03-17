@@ -3,15 +3,14 @@
 require_once 'assets/config/db.php';
 //include ability to delete comments
 require_once 'assets/functions/delete-comment-function.php';
-//register information to database
-require_once 'assets/functions/comment-to-database.php';
 //get specific comment to edit
 require_once 'assets/functions/select-comment-id.php';
+//register information to database
+require_once 'assets/functions/comment-to-database.php';
 //include ability to showcase comments
 require_once 'assets/functions/view-comments.php';
 //include ability to uppdate comments
 require_once 'assets/functions/comment-update.php';
-
 //include sessions
 require_once 'assets/functions/sessions.login.php';
 ?>
@@ -20,39 +19,47 @@ require_once 'assets/functions/sessions.login.php';
 require_once 'assets/includes/header.php';
 ?>
 
+<?php
+//unclude header
+require_once 'assets/includes/header.php';
+?>
 
-<main>
+
+<main class="mt-5">
+
 
     <!-- php sucsess massage -->
-    <?php
-    //check if action is set
-    if (isset($_GET['action'])) {
-        //checks which action is set
-        switch ($_GET['action']) {
-            case 'succsess':
-                echo '
+    <div class="container">
+        <?php
+        //check if action is set
+        if (isset($_GET['action'])) {
+            //checks which action is set
+            switch ($_GET['action']) {
+                case 'success':
+                    echo '
                         <div class="alert alert-success">
                             Kommentaren har laggts upp!
                         </div>
                     ';
-                break;
-            case 'updated ':
-                echo '
+                    break;
+                case 'updated':
+                    echo '
                         <div class="alert alert-success">
-                            Kommentaren har uppdaterats upp!
+                            Kommentaren har uppdaterats!
                         </div>
                     ';
-                break;
-            case 'deleted':
-                echo '
+                    break;
+                case 'deleted':
+                    echo '
                         <div class="alert alert-danger">
                             Kommentaren har raderats!
                         </div>
                     ';
-                break;
+                    break;
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
 
     <!-- Start of detail page -->
     <!-- back button -->
@@ -147,9 +154,15 @@ require_once 'assets/includes/header.php';
                                     <a href="edit-comment.php?edit=<?php echo $row['comment_id']; ?>" class="me-4 edt-btn">
                                         <i class="fa-solid fa-pen-to-square ic"></i> Redigera
                                     </a>
-                                    <a href="delete-comment.php?delete=<?php echo $row['comment_id']; ?>" class="edt-btn">
-                                        <i class="fa-solid fa-trash-can ic"></i> Radera
-                                    </a>
+
+                                    <form method="post" action="detail.php" style="display:inline;">
+                                        <input type="hidden" name="comment_id" value="<?php echo $row['comment_id']; ?>">
+
+                                        <a href="delete-comment.php?delete=<?php echo $row['comment_id']; ?>" name="remove" class="edt-btn"
+                                            <i class="fa-solid fa-trash-can ic"></i> Radera
+                                        </a>
+                                    </form>
+
                                 <?php endif; ?>
 
 

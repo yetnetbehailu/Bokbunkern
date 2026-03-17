@@ -53,7 +53,7 @@ require_once 'assets/includes/header.php';
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
                     <div class="col-11">
-                        <p class="fw-bold" value="<?php echo $row['firstname'] . ' ' . $row['lastname']; ?>"><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
+                        <p class="fw-bold"><?php echo $row['firstname'] . ' ' . $row['lastname']; ?> <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
                         <p>
                             <input class="form-control" type="text" value="<?php echo $row['comment']; ?>" name="comment" />
                         </p>
