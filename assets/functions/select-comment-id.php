@@ -6,6 +6,7 @@ if (isset($_GET['edit'])) {
         d.comment_id,
         d.comment,
         d.date,
+        u.user_id,
         u.firstname,
         u.lastname
     FROM detail AS d

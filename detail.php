@@ -1,12 +1,12 @@
 <?php
 //include database connection
 require_once 'assets/config/db.php';
+//include ability to delete comments
+require_once 'assets/functions/delete-comment-function.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
 //get specific comment to edit
 require_once 'assets/functions/select-comment-id.php';
-//include ability to delete comments
-require_once 'assets/functions/delete-comment-function.php';
 //include ability to showcase comments
 require_once 'assets/functions/view-comments.php';
 //include ability to uppdate comments
@@ -116,49 +116,59 @@ require_once 'assets/includes/header.php';
     <?php endif; ?>
 
     <!-- comments made -->
+
+
     <?php
     //checks if there are any comments to show
-    if ($stmt->rowCount() > 0) {
-        //fetches all comments and shows them on the page
-        while ($row = $stmt->fetch()) {
-            echo '
-                     <div class="bg-cust2 p-3 rounded container">
-            <div class="row p-3 border m-2 bg-white border rounded">
-                <div class="col-1 fa-3x">
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="col-11">
-                    <p class="fw-bold">' . $row['firstname'] . ' ' . $row['lastname'] . ' <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
-                    <p>
-                        ' . $row['comment'] . '
-                    </p>
-                    <div class="row justify-content-between">
-                        <div class="col-10"> <!-- edit and delete button for comment -->
+    if ($stmt->rowCount() > 0):
+    ?>
 
-                            <a href="edit-comment.php?edit=' . $row['comment_id'] . '" class="me-4 edt-btn"><i class="fa-solid fa-pen-to-square ic"></i> Redigera</a>
-                            <a href="delete-comment.php?delete=' . $row['comment_id'] . '" class="edt-btn"><i class="fa-solid fa-trash-can ic"></i> Radera</a>
-                            
-                        </div>
-                        <div class="col-2">
+        <?php
+        //fetches all comments and shows them on the page
+        while ($row = $stmt->fetch()):
+        ?>
+
+            <div class="bg-cust2 p-3 rounded container">
+                <div class="row p-3 border m-2 bg-white border rounded">
+                    <div class="col-1 fa-3x">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                    <div class="col-11">
+                        <p class="fw-bold"><?php echo $row['firstname'] . ' ' . $row['lastname']; ?> <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
+                        <p>
+                            <?php echo $row['comment']; ?>
+                        </p>
+                        <div class="row justify-content-between">
+                            <div class="col-10"> <!-- edit and delete button for comment -->
+
+
+
+                                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['user_id']): ?>
+                                    <a href="edit-comment.php?edit=<?php echo $row['comment_id']; ?>" class="me-4 edt-btn">
+                                        <i class="fa-solid fa-pen-to-square ic"></i> Redigera
+                                    </a>
+                                    <a href="delete-comment.php?delete=<?php echo $row['comment_id']; ?>" class="edt-btn">
+                                        <i class="fa-solid fa-trash-can ic"></i> Radera
+                                    </a>
+                                <?php endif; ?>
+
+
+                            </div>
                             <div class="col-2">
-                                <i class="fa-regular fa-heart"></i>
+                                <div class="col-2">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            //if there are no comments to show, show this text
+            <div class="alert bg-cust3 text-white container">
+                Det finns inga kommentarer än, var först med att kommentera!
             </div>
-                    ';
-        }
-    } else {
-        //if there are no comments to show, show this text
-        echo '
-                <div class="alert bg-cust3 text-white container">
-                    Det finns inga kommentarer än, var först med att kommentera!
-                </div>
-            ';
-    }
-    ?>
-
+        <?php endif; ?>
 </main>
 
 <?php

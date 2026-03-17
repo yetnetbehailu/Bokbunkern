@@ -1,14 +1,14 @@
 <?php
 //include database connection
 require_once 'assets/config/db.php';
+//include delete comment function
+require_once 'assets/functions/delete-comment-function.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
 //get specific comment to edit
 require_once 'assets/functions/select-comment-id.php';
 //include sessions 
 require_once 'assets/functions/sessions.login.php';
-//include delete comment function
-require_once 'assets/functions/delete-comment-function.php';
 //include ability to showcase comments
 require_once 'assets/functions/view-comments.php';
 ?>
@@ -35,7 +35,7 @@ require_once 'assets/includes/header.php';
                 <div class="row p-3 border m-2 bg-white border rounded">
                     <p class="text-center">Är du säker på att du vill radera denna kommentaren?</p>
 
-                    <input type="hidden" name="comment_id" value="<?php echo $row['comment_id'] ?? ''; ?>">
+                    <input type="hidden" name="comment_id" value="<?php echo $_GET['delete'] ?? ''; ?>">
 
                     <button class="btnc w-50 text-center mx-auto" type="submit" name="remove">
                         Radera <i class="mx-1 fa-solid fa-trash-can"></i>

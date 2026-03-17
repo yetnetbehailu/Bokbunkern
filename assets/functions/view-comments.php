@@ -6,6 +6,7 @@ $sql = 'SELECT
     d.comment_id,
     d.comment,
     d.date,
+    d.user_id,
     u.firstname,
     u.lastname
 FROM detail AS d
