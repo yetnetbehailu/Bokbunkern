@@ -205,3 +205,118 @@ h3 {
     opacity: 1;
 }
 
+
+
+/* ===========================
+   Detail page
+============================== */
+
+/* Custom button in css */
+.btnc {
+    text-decoration: none;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.btnc:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/* edit and delete button */
+.edt-btn {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* ikon color */
+.ic {
+    color: var(--darkest-lilac);
+}
+
+
+/* background color for detail page */
+.bg-cust1 {
+    background-color: var(--light-lilac);
+}
+
+/* background color for comment field */
+.bg-cust2 {
+    background-color: var(--white);
+}
+
+/* background color for "no comments" alert */
+.bg-cust3 {
+    background-color: var(--dark-lilac);
+}
+/* ==========================================
+   Book page colors
+body.books-page {
+    background-color: #f8f9fa;
+}
+
+.search-section {
+    background-color: var(--light-lilac);
+}
+
+.btn-primary {
+    background-color: var(--dark-lilac);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--darkest-lilac);
+}
+
+.card {
+    background-color: white;
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-grid .card {
+    box-shadow: 0 6px 14px rgb(79 44 114 / 12%);
+}
+
+.book-grid .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 30px rgb(79 44 114 / 22%);
+}
+
+.book-grid .card img {
+    transition: transform 0.35s ease;
+}
+
+.book-grid .card:hover img {
+    transform: scale(1.04);
+}
+
+.book-grid .card-title {
+    transition: color 0.25s ease;
+}
+
+.book-grid .card:hover .card-title {
+    color: var(--darkest-lilac);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .book-grid .card,
+    .book-grid .card img,
+    .book-grid .card-title {
+        transition: none;
+    }
+
+    .book-grid .card:hover {
+        transform: none;
+    }
+}
