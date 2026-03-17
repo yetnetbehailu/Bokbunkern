@@ -26,16 +26,19 @@
 
 
     --primary-font: "Unna", serif;
-    --secondary-font:"Bricolage Grotesque", sans-serif;
+    --secondary-font: "Bricolage Grotesque", sans-serif;
 }
 
 body {
-    font-size: 1rem; /* 16px default */
+    font-size: 1rem;
+    /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--secondary-font);
 }
 
@@ -109,8 +112,9 @@ h1, h2, h3 {
     height: 4rem;
 }
 
-/* Hero section
-   ===========================*/
+/* ===========================
+   Hero section
+============================== */
 .hero-bg {
     background-image: url(../images/hero-bg.webp);
     background-size: cover;
@@ -128,9 +132,11 @@ h1, h2, h3 {
     color: var(--darkest-lilac);
     font-size: 1.2rem;
     line-height: 1.7rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: #4f2c72 solid 3px;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-size: 2.2rem;
 }
 
@@ -140,10 +146,62 @@ h1, h2, h3 {
     color: var(--white);
     font-size: 1.2rem;
 
-    transition: background-color 0.25s ease ,color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.btn-explore-books:hover{
+.btn-explore-books:hover {
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
 }
+
+/* ===========================
+    Bokbunkern activities section
+============================== */
+.bokbunkern-activities {
+    background-color: var(--light-lilac);
+    padding: 3rem 0;
+}
+
+.info-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 1.5rem 2.5rem;
+    color: var(--darkest-lilac);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    line-height: 1.7rem;
+    border: #4f2c72 solid 3px;
+}
+
+.info-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.info-card h2 {
+    font-size: 1.8rem;
+}
+
+.explore-forum-img {
+    max-width: 100%;
+    height: auto;
+    width: 275px;
+}
+
+.explore-link {
+    margin-left: 5.5rem;
+}
+
+.explore-arrow {
+    width: 75px;
+    height: auto;
+    transition: transform 0.30s ease, opacity 0.30s ease;
+    opacity: 0.85;
+}
+
+.explore-link:hover .explore-arrow {
+    transform: translate(6px);
+    opacity: 1;
+}
+
