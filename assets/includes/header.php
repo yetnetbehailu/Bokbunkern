@@ -1,6 +1,8 @@
 <?php
-//Init session management
-session_start();
+// Ensure session data is available when this file is included
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // show all errors for debugging
 require_once 'assets/includes/display_errors.php';
