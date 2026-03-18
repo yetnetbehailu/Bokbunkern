@@ -74,7 +74,7 @@ require_once 'assets/includes/header.php';
     <!-- -->
     <section class="newsletter-content">
         <form class="container">
-            <h2 class="mb-2">Få boktips direkt i inkorgen</h2>
+            <h3 class="mb-2">Få boktips direkt i inkorgen</h3>
             <p class="mb-2">
                 Följ allt som händer — bara det bästa från bokklubben.
             </p>
@@ -91,6 +91,27 @@ require_once 'assets/includes/header.php';
         </form>
     </section>
 
+    <!--  -->
+    <section class="container-fluid visual-guide">
+        <h2 class="text-center">Så funkar bokklubben</h2>
+        <ol class="d-flex instructions">
+            <li>
+                <img src="assets/images/join.svg" alt="">
+                <h3>Bli medlem</h3>
+                <p>Registrera dig snabbt och enkelt</p>
+            </li>
+            <li>
+                <img src="assets/images/choose-book.svg" alt="">
+                <h3>Välj bok</h3>
+                <p>Hitta något nytt att läsa varje månad</p>
+            </li>
+            <li>
+                <img src="assets/images/community.svg" alt="">
+                <h3>Diskutera</h3>
+                <p>Dela dina tankar med andra medlemmar</p>
+            </li>
+        </ol>
+    </section>
 
 </main>
 <?php

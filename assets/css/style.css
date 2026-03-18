@@ -220,8 +220,8 @@ h3 {
     padding: 2rem 3rem;
 }
 
-.newsletter-content h2 {
-    font-size: 1.8rem;
+.newsletter-content h3 {
+    font-size: 1.5rem;
 }
 
 /* Skapar en egen CSS variabel för ramen runt newsletter input och "Gå med" knappen */
@@ -261,6 +261,43 @@ h3 {
 
 #newsletter-email::placeholder {
     color: var(--darkest-lilac);
+}
+
+/* ===========================
+   Visual guide section
+============================== */
+.instructions {
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 2rem;
+}
+
+.instructions h3 {
+    font-size: 1.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.instructions p {
+    margin-bottom: 0;
+}
+
+.visual-guide img {
+    width: auto;
+    max-height: 130px;
+}
+
+.visual-guide {
+    background-color: var(--light-yellow);
+    color: var(--darkest-lilac);
+    padding: 2rem 0;
+}
+
+.visual-guide li {
+    padding: 1rem 1rem 0;
+    text-align: center;
 }
 
 /* ===========================
