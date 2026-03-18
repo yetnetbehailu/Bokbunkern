@@ -362,6 +362,87 @@ h3 {
 }
 
 /* ===========================
+    Footer section
+============================== */
+.footer {
+    background-color: var(--white);
+    color: var(--darkest-lilac);
+    font-family: var(--secondary-font);
+}
+
+.footer-logo {
+    width: auto;
+    height: 3rem;
+}
+
+.footer-logo-link {
+    text-decoration: none;
+}
+
+.footer-logo-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--darkest-lilac);
+}
+
+.footer-tagline {
+    font-size: 0.95rem;
+    color: var(--dark-lilac);
+    max-width: 260px;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    margin-top: 0.95rem;
+    color: var(--darkest-lilac);
+}
+
+.footer-links a {
+    color: var(--darkest-lilac);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-links a.active {
+    pointer-events: none; /* Går inte att klicka länken */
+    color: var(--darkest-lilac); 
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: var(--dark-lilac);
+}
+
+.footer-contact {
+    font-size: 1rem;
+}
+
+.footer-contact:hover {
+    color: var(--dark-lilac);
+}
+
+.footer-social a {
+    font-size: 1.3rem;
+    color: var(--darkest-lilac);
+    transition: color 0.25s ease;
+}
+
+.footer-social a:hover {
+    color: var(--dark-lilac);
+}
+
+.footer-divider {
+    border-color: rgba(0, 0, 0, 0.426);
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    color: var(--darkest-lilac);
+}
+
+/* ===========================
    Detail page
 ============================== */
 
