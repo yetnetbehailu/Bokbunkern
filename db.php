@@ -14,7 +14,7 @@
 // Konstanter kan inte ändras efter att de definierats (säkrare)
 // -----------------------------------------------------------------------------
 define('DB_HOST', 'mysql');        // Servernamn
-define('DB_NAME', 'mydb');         // Databasnamn
+define('DB_NAME', 'bokbunkern');   // Databasnamn
 define('DB_USER', 'root');         // Användarnamn
 define('DB_PASS', 'root');         // Lösenord
 
