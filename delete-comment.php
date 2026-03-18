@@ -3,7 +3,7 @@
 require_once 'assets/includes/header.php';
 ?>
 
-<main>
+<main class="mb-4">
 
     <!-- Start of detail page -->
     <!-- back button -->

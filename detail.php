@@ -5,7 +5,7 @@ require_once 'assets/includes/header.php';
 
 
 
-<main class="mt-5">
+<main class="mt-2">
 
 
     <!-- php sucsess massage -->
@@ -115,7 +115,7 @@ require_once 'assets/includes/header.php';
         while ($row = $stmt->fetch()):
         ?>
 
-            <div class="bg-cust2 p-3 rounded container">
+            <div class="bg-cust2 p-3 rounded container mb-4">
                 <div class="row p-3 border m-2 bg-white border rounded">
                     <div class="col-1 fa-3x">
                         <i class="fa-solid fa-circle-user"></i>

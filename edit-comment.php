@@ -4,7 +4,7 @@ require_once 'assets/includes/header.php';
 ?>
 
 
-<main>
+<main class="mb-4">
 
     <!-- php sucsess massage -->
     <?php

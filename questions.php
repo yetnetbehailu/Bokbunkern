@@ -4,7 +4,7 @@
 require_once 'assets/includes/header.php';
 ?>
 
-<main class="">
+<main class="mb-4">
     <!-- Start of FAQ page -->
     <div class="mt-5 p-3 bg-cust2 rounded border-cust container">
         <div class="text-center">
