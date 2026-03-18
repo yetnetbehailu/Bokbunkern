@@ -1,18 +1,4 @@
 <?php
-//include database connection
-require_once 'assets/config/db.php';
-//include delete comment function
-require_once 'assets/functions/delete-comment-function.php';
-//register information to database
-require_once 'assets/functions/comment-to-database.php';
-//include sessions 
-require_once 'assets/functions/sessions.login.php';
-//include ability to showcase comments
-require_once 'assets/functions/view-comments.php';
-//get specific comment to edit
-require_once 'assets/functions/select-comment-id.php';
-?>
-<?php
 //unclude header
 require_once 'assets/includes/header.php';
 ?>
