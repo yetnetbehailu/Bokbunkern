@@ -206,6 +206,64 @@ h3 {
 }
 
 /* ===========================
+    Newsletter section
+============================== */
+
+.newsletter-content {
+    background-color: var(--white);
+    color: var(--darkest-lilac);
+}
+
+.newsletter-content form {
+    max-width: 610px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+}
+
+.newsletter-content h2 {
+    font-size: 1.8rem;
+}
+
+/* Skapar en egen CSS variabel för ramen runt newsletter input och "Gå med" knappen */
+.newsletter-row {
+    --newsletter-border: var(--dark-lilac);
+}
+
+/* Input använder variabeln */
+#newsletter-email {
+    border-radius: 0;
+    border: 1px solid var(--newsletter-border);
+    transition: border-color 0.25s ease;
+}
+
+.btn-newsletter {
+    background-color: var(--dark-lilac);
+    color: var(--white);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    border-radius: 0;
+    flex-shrink: 0; /* Hindrar knappen från att krympa i flex-raden */
+    padding: 0.8rem 1rem;
+}
+
+.btn-newsletter:hover{
+    background-color: var(--darkest-lilac);
+    color: var(--light-yellow);
+}
+
+/* När "Gå med" knappen hovras ändras ram färgen på den egna CSS variabeln */
+.newsletter-row:has(.btn-newsletter:hover) {
+    --newsletter-border: var(--darkest-lilac);
+}
+
+.newsletter-content .form-text {
+    color: var(--darkest-lilac) !important;
+}
+
+#newsletter-email::placeholder {
+    color: var(--darkest-lilac);
+}
+
+/* ===========================
    Detail page
 ============================== */
 

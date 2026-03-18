@@ -71,6 +71,27 @@ require_once 'assets/includes/header.php';
         </div>
     </section>
 
+    <!-- -->
+    <section class="newsletter-content">
+        <form class="container">
+            <h2 class="mb-2">Få boktips direkt i inkorgen</h2>
+            <p class="mb-2">
+                Följ allt som händer — bara det bästa från bokklubben.
+            </p>
+            <div class="newsletter-row mb-2 d-flex">
+                <input type="email" class="form-control" id="newsletter-email"
+                    placeholder="Din e‑postadress" aria-label="Din e‑postadress" aria-describedby="emailHelp">
+                <button type="submit" class="btn btn-newsletter">
+                    Gå med
+                </button>
+            </div>
+            <div id="emailHelp" class="form-text">
+                Vi delar aldrig din e‑postadress med någon annan.
+            </div>
+        </form>
+    </section>
+
+
 </main>
 <?php
 // Include footer
