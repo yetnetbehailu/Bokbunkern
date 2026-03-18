@@ -113,6 +113,57 @@ require_once 'assets/includes/header.php';
         </ol>
     </section>
 
+    <!-- -->
+    <section class="member-reviews">
+        <h2 class="text-center">Vad våra medlemmar tycker</h2>
+        <div class="reviews-carousel">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="assets/images/profile1.jpg" alt="Profilbild" class="review-avatar">
+                    <span class="review-name">Anna</span>
+                </div>
+
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+
+                <div class="review-rating">
+                    ★★★★☆
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="assets/images/profile2.jpg" alt="Profilbild" class="review-avatar">
+                    <span class="review-name">Johan</span>
+                </div>
+
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+
+                <div class="review-rating">
+                    ★★★★★
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="assets/images/profile3.jpg" alt="Profilbild" class="review-avatar">
+                    <span class="review-name">Sara</span>
+                </div>
+
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+
+                <div class="review-rating">
+                    ★★★★☆
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 <?php
 // Include footer

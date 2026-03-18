@@ -301,6 +301,67 @@ h3 {
 }
 
 /* ===========================
+    Member reviews section
+============================== */
+.member-reviews {
+    background-color: var(--light-lilac);
+    color: var(--darkest-lilac);
+    padding: 2rem 0 3rem;
+}
+
+.member-reviews h2 {
+    font-size: 1.8rem;
+}
+
+.reviews-carousel {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+
+}
+
+.review-card {
+    background-color: var(--white);
+    border: 2px solid var(--darkest-lilac);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.review-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-name {
+    font-weight: 600;
+}
+
+.review-text {
+    margin-bottom: 0.8rem;
+}
+
+.review-rating {
+    text-align: right;
+    font-size: 1.2rem;
+    color: var(--light-yellow);
+}
+
+/* ===========================
    Detail page
 ============================== */
 
