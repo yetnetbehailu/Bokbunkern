@@ -128,13 +128,13 @@ require_once 'assets/includes/header.php';
                         <div class="row justify-content-between">
                             <div class="col-10"> <!-- edit and delete button for comment -->
                                 <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['user_id']): ?>
-                                    <a href="edit-comment.php?edit=<?php echo $row['comment_id']; ?>" class="me-4 edt-btn">
+                                    <a href="edit.comment.php?edit=<?php echo $row['comment_id']; ?>" class="me-4 edt-btn">
                                         <i class="fa-solid fa-pen-to-square ic"></i> Redigera
                                     </a>
                                     <form method="post" action="detail.php" style="display:inline;">
                                         <input type="hidden" name="comment_id" value="<?php echo $row['comment_id']; ?>">
 
-                                        <a href="delete-comment.php?delete=<?php echo $row['comment_id']; ?>" name="remove" class="edt-btn">
+                                        <a href="delete.comment.php?delete=<?php echo $row['comment_id']; ?>" name="remove" class="edt-btn">
                                             <i class="fa-solid fa-trash-can ic"></i> Radera
                                         </a>
                                     </form>

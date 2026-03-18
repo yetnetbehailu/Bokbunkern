@@ -32,7 +32,7 @@ require_once 'assets/includes/header.php';
 
     <!-- edit comment -->
     <?php if (!empty($row) && $row['user_id'] == $_SESSION['user_id']): ?>
-        <form action="edit-comment.php" method="post">
+        <form action="edit.comment.php" method="post">
             <div class="bg-cust2 p-3 rounded container">
                 <div class="row p-3 border m-2 bg-white border rounded">
                     <div class="col-1 fa-3x">

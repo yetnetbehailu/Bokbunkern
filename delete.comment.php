@@ -16,7 +16,7 @@ require_once 'assets/includes/header.php';
 
     <!-- delete comment -->
     <?php if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])): ?>
-        <form action="delete-comment.php" method="post">
+        <form action="delete.comment.php" method="post">
             <div class="bg-cust2 p-3 rounded container">
                 <div class="row p-3 border m-2 bg-white border rounded">
                     <p class="text-center">Är du säker på att du vill radera denna kommentaren?</p>
