@@ -3,7 +3,7 @@
 if (isset($_POST['login'])) {
 
     // Always redirect back to the page where login was submitted.
-    $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '/index.php', PHP_URL_PATH);
+     $currentPath = $_SERVER['REQUEST_URI'] ?? '/index.php';
     if (!is_string($currentPath) || $currentPath === '' || $currentPath[0] !== '/') {
         $currentPath = '/index.php';
     }

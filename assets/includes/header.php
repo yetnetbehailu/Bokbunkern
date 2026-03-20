@@ -59,7 +59,6 @@ require_once 'assets/functions/sessions.login.php';
                             <a class="nav-link fs-5" href="#">FAQ</a>
                         </li>
                         <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
-                        <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>
                     </ul>
 
 

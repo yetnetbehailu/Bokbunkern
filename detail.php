@@ -1,7 +1,7 @@
 <?php
 session_start();
 //include database connection
-require_once 'db.php';
+require_once 'assets/config/db.php';
 //register information to database
 require_once 'assets/functions/comment-to-database.php';
 //include ability to showcase comments
