@@ -23,17 +23,29 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Tabellstruktur `users`
---
+-----------------------------
+-- Tabellstruktur: `users`
+-----------------------------
 
 CREATE TABLE `users` (
-  `user_id` int UNSIGNED NOT NULL,
-  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `regdate` datetime NOT NULL
+  `user_id` INT UNSIGNED NOT NULL,
+  `firstname` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `regdate` DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+----------------------------------
+-- Tabell: `newsletter_subscribers`
+-- To store email addresses for newsletter signups.
+-- Unique constraint to prevent double registrations of email addresses.
+----------------------------------
+CREATE TABLE `newsletter_subscribers` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -70,7 +82,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT för tabell `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
