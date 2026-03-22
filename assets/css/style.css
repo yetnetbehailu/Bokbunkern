@@ -492,42 +492,43 @@ h3 {
     background-color: var(--dark-lilac);
 }
 /* ===========================
-   Book page colors
+   Books page (Mina)
 ============================== */  
+
 body.books-page {
     background-color: #f8f9fa;
 }
 
+/* 🔍 SEARCH SECTION */
 .search-section {
     background-color: var(--light-lilac);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
 }
 
-.btn-primary {
-    background-color: var(--dark-lilac);
-    border: none;
-}
 
-.btn-primary:hover {
-    background-color: var(--darkest-lilac);
-}
-
+/* 📦 CARD BAS */
 .card {
-    background-color: white;
-    border: none;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 0.75rem;
     overflow: hidden;
+    position: relative;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/*SHADOW */
 .book-grid .card {
-    box-shadow: 0 6px 14px rgb(79 44 114 / 12%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* HOVER*/
 .book-grid .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 18px 30px rgb(79 44 114 / 22%);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
+/*IMAGE ZOOM */
 .book-grid .card img {
     transition: transform 0.35s ease;
 }
@@ -536,7 +537,9 @@ body.books-page {
     transform: scale(1.04);
 }
 
-.book-grid .card-title {
+/* 📝TITEL*/
+.card-title {
+    color: var(--dark-lilac);
     transition: color 0.25s ease;
 }
 
@@ -544,15 +547,14 @@ body.books-page {
     color: var(--darkest-lilac);
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-    .book-grid .card,
-    .book-grid .card img,
-    .book-grid .card-title {
-        transition: none;
-    }
-
-    .book-grid .card:hover {
-        transform: none;
-    }
+/*GULT STRECK*/
+.card-text::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--light-yellow);
+    margin-top: 8px;
+    border-radius: 2px;
 }
+

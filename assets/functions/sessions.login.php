@@ -2,10 +2,16 @@
 //checks whether submit button has been set
 if (isset($_POST['login'])) {
 
+    // Always redirect back to the page where login was submitted.
+     $currentPath = $_SERVER['REQUEST_URI'] ?? '/index.php';
+    if (!is_string($currentPath) || $currentPath === '' || $currentPath[0] !== '/') {
+        $currentPath = '/index.php';
+    }
+
     //Checks whether e-mail and password fields are empty
     if (empty($_POST['email']) || empty($_POST['password'])) {
         //Redriect user to error page
-        header('Location: index.php?error=empty');
+        header('Location: ' . $currentPath . '?error=empty');
         exit();
     }
 
@@ -37,13 +43,13 @@ if (isset($_POST['login'])) {
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['firstname'] = $row['firstname'];
         $_SESSION['lastname'] = $row['lastname'];
-        // Redirect user to index page
-        header('Location: ../../index.php');
+        // Redirect user to the page they logged in from
+        header('Location: ' . $currentPath);
         exit();
     } else {
         // Redirect user to error page
 
-        header('Location: ../../index.php?action=error');
+        header('Location: ' . $currentPath . '?action=error');
         exit();
     }
 }
