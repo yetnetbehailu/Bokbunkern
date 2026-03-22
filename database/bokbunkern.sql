@@ -23,22 +23,61 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+-- ---------------------------
+-- Tabellstruktur: `users`
+-- ---------------------------
+
+CREATE TABLE `users` (
+  `user_id` INT UNSIGNED NOT NULL,
+  `firstname` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `regdate` DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumpning av Data i tabell `users`
+--
+INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`, `regdate`) VALUES
+(1, 'root', 'root', 'mina.borjesson0056@stud.hkr.se', 'root', '2026-03-15 11:26:18'),
+(2, 'Anna', 'Andersson', 'anna@test.se', 'root', '2026-03-15 11:32:00'),
+(3, 'Erik', 'Eriksson', 'Erik@test.se', 'root', '2026-03-15 11:32:10'),
+(4, 'Lisa', 'Larsson', 'lisa@test.se', 'root', '2026-03-15 11:32:23'),
+(5, 'Johan', 'Johansson', 'Johan@test.se', 'root', '2026-03-15 11:32:40'),
+(6, 'Sara', 'Svensson', 'Sara@test.se', 'root', '2026-03-15 11:32:53'),
+(7, 'David', 'Nilsson', 'david@test.se', 'root', '2026-03-15 11:33:08'),
+(8, 'Emma', 'Karlsson', 'Emma@test.se', 'root', '2026-03-15 11:33:20'),
+(9, 'Oskar', 'Petterson', 'Oskar@test.se', 'root', '2026-03-15 11:33:32'),
+(10, 'Mina', 'Minasson', 'Mina@test.se', 'root', '2026-03-15 11:33:55');
+
+
+-- --------------------------------
+-- Tabell: `newsletter_subscribers`
+-- To store email addresses for newsletter signups.
+-- Unique constraint to prevent double registrations of email addresses.
+-- --------------------------------
+CREATE TABLE `newsletter_subscribers` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`email`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Tabellstruktur `books`
 --
-
 CREATE TABLE `books` (
-  `id` int NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `id` INT NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
   `description` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `category` varchar(100) NOT NULL
+  `image` VARCHAR(255) NOT NULL,
+  `category` VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumpning av Data i tabell `books`
 --
-
 INSERT INTO `books` (`id`, `title`, `description`, `image`, `category`) VALUES
 (1, 'A Court of Thorns and Roses', 'En kvinna förs in i feernas värld – en plats av skönhet, mörker, hemligheter och förbjuden kärlek.', 'assets/images/acotar.jpg', 'Romantasy'),
 (2, 'Alchemised', 'I en värld där alkemi kan förändra allt, dras hon in i en farlig kamp om makt, sanning och överlevnad.', 'assets/images/alchemised.jpg', 'Romantasy'),
@@ -73,50 +112,20 @@ INSERT INTO `books` (`id`, `title`, `description`, `image`, `category`) VALUES
 --
 
 CREATE TABLE `detail` (
-  `comment_id` int UNSIGNED NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
+  `comment_id` INT UNSIGNED NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
   `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` datetime NOT NULL
+  `date` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumpning av Data i tabell `detail`
 --
-
 INSERT INTO `detail` (`comment_id`, `user_id`, `comment`, `date`) VALUES
 (1, 3, 'Spännande bok!', '2026-03-18 13:59:14'),
 (3, 1, 'detta ska funka', '2026-03-18 13:42:00');
 
 -- --------------------------------------------------------
-
---
--- Tabellstruktur `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int UNSIGNED NOT NULL,
-  `firstname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `regdate` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumpning av Data i tabell `users`
---
-
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`, `regdate`) VALUES
-(1, 'root', 'root', 'mina.borjesson0056@stud.hkr.se', 'root', '2026-03-15 11:26:18'),
-(2, 'Anna', 'Andersson', 'anna@test.se', 'root', '2026-03-15 11:32:00'),
-(3, 'Erik', 'Eriksson', 'Erik@test.se', 'root', '2026-03-15 11:32:10'),
-(4, 'Lisa', 'Larsson', 'lisa@test.se', 'root', '2026-03-15 11:32:23'),
-(5, 'Johan', 'Johansson', 'Johan@test.se', 'root', '2026-03-15 11:32:40'),
-(6, 'Sara', 'Svensson', 'Sara@test.se', 'root', '2026-03-15 11:32:53'),
-(7, 'David', 'Nilsson', 'david@test.se', 'root', '2026-03-15 11:33:08'),
-(8, 'Emma', 'Karlsson', 'Emma@test.se', 'root', '2026-03-15 11:33:20'),
-(9, 'Oskar', 'Petterson', 'Oskar@test.se', 'root', '2026-03-15 11:33:32'),
-(10, 'Mina', 'Minasson', 'Mina@test.se', 'root', '2026-03-15 11:33:55');
 
 --
 -- Index för dumpade tabeller
@@ -149,19 +158,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT för tabell `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT för tabell `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `comment_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `comment_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT för tabell `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restriktioner för dumpade tabeller
