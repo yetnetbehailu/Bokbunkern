@@ -73,13 +73,13 @@ require_once 'assets/includes/header.php';
 
     <!-- -->
     <section class="newsletter-content">
-        <form class="container">
+        <form class="container" method="POST" action="assets/includes/newsletter_subscription.php">
             <h3 class="mb-2">Få boktips direkt i inkorgen</h3>
             <p class="mb-2">
                 Följ allt som händer — bara det bästa från bokklubben.
             </p>
             <div class="newsletter-row mb-2 d-flex">
-                <input type="email" class="form-control" id="newsletter-email"
+                <input type="email" class="form-control" id="newsletter-email" name="newsletter-email"
                     placeholder="Din e‑postadress" aria-label="Din e‑postadress" aria-describedby="emailHelp">
                 <button type="submit" class="btn btn-newsletter">
                     Gå med
