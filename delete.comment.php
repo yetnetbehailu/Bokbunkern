@@ -3,16 +3,12 @@
 require_once 'assets/includes/header.php';
 ?>
 
-<main class="mb-4">
-
+<main class="mb-4 textc-cust">
     <!-- Start of detail page -->
     <!-- back button -->
     <div class="m-3">
         <a href="detail.php" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
     </div>
-
-
-
 
     <!-- delete comment -->
     <?php if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])): ?>
@@ -20,10 +16,7 @@ require_once 'assets/includes/header.php';
             <div class="bg-cust2 p-3 rounded container">
                 <div class="row p-3 border m-2 bg-white border rounded">
                     <p class="text-center">Är du säker på att du vill radera denna kommentaren?</p>
-
-
                     <input type="hidden" name="comment_id" value="<?php echo $_GET['delete'] ?? ''; ?>">
-
                     <button class="btnc w-50 text-center mx-auto" type="submit" name="remove">
                         Radera <i class="mx-1 fa-solid fa-trash-can"></i>
                     </button>
@@ -37,7 +30,6 @@ require_once 'assets/includes/header.php';
             </div>
         </div>
     <?php endif; ?>
-
 </main>
 
 <?php

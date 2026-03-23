@@ -541,8 +541,8 @@ body.books-page {
 /* Custom button in css */
 .btnc {
     text-decoration: none;
-    color: #000000;
-    border: 2px solid #000000;
+    color: var(--darkest-lilac);
+    border: 2px solid var(--darkest-lilac);
     padding: 5px;
     border-radius: 5px;
     background-color: #ffffff;
@@ -550,8 +550,8 @@ body.books-page {
 
 .btnc:hover {
     color: #ffffff;
-    background-color: #000000;
-    border: 2px solid #000000;
+    background-color: var(--darkest-lilac);
+    border: 2px solid var(--darkest-lilac);
     padding: 5px;
     border-radius: 5px;
 }
@@ -567,7 +567,6 @@ body.books-page {
 .ic {
     color: var(--darkest-lilac);
 }
-
 
 /* background color for detail page */
 .bg-cust1 {
@@ -599,6 +598,8 @@ body.books-page {
 /* ===========================
    About us page
 ============================== */
+
+/* custom border */
 .border-cust {
     border: 10px solid var(--light-lilac);
 
@@ -608,12 +609,26 @@ body.books-page {
 /* ===========================
    FAQ page
 ============================== */
+
+/* color for drop down element */
 .dropdown-color {
     background-color: var(--darkest-lilac);
     color: var(--white);
 }
 
+/* hoover color for drop down element */
 .dropdown-color:hover {
     background-color: var(--light-lilac);
+    color: var(--darkest-lilac);
+}
+
+
+/* ===========================
+   Detail, about us and FAQ page text color
+============================== */
+
+/* text color for all three pages mentioned above */
+
+.textc-cust {
     color: var(--darkest-lilac);
 }

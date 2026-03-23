@@ -3,9 +3,7 @@
 require_once 'assets/includes/header.php';
 ?>
 
-
-<main class="mb-4">
-
+<main class="mb-4 textc-cust">
     <!-- php sucsess massage -->
     <?php
     //check if action is set
@@ -29,7 +27,6 @@ require_once 'assets/includes/header.php';
         <a href="detail.php" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
     </div>
 
-
     <!-- edit comment -->
     <?php if (!empty($row) && $row['user_id'] == $_SESSION['user_id']): ?>
         <form action="edit.comment.php" method="post">
@@ -41,7 +38,7 @@ require_once 'assets/includes/header.php';
                     <div class="col-11">
                         <p class="fw-bold"><?php echo $row['firstname'] . ' ' . $row['lastname']; ?> <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
                         <p>
-                            <input class="form-control" type="text" value="<?php echo $row['comment']; ?>" name="comment" />
+                            <input class="form-control" type="text" value="<?php echo $row['comment']; ?>" name="comment">
                         </p>
                         <div class="row justify-content-between">
                             <input type="hidden" name="comment_id" value="<?php echo $row['comment_id']; ?>">
@@ -58,13 +55,13 @@ require_once 'assets/includes/header.php';
                         </div>
                     </div>
                 </div>
+            </div>
         </form>
     <?php else: ?>
         <div class="alert bg-cust3 text-white container">
             Kommentaren hittades inte.
         </div>
     <?php endif; ?>
-
 </main>
 
 <?php
