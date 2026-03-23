@@ -467,24 +467,11 @@ h3 {
 ============================== */
 
 
-/* --text-color: ; Not yet decided */
-    --dark-blue: #507A87;
-    --light-blue: #C9DEF1;
-    --dark-lilac: #79559e;
-    --darkest-lilac: #4f2c72;
-    --light-lilac: #D8C7EC;
-    --light-yellow: #F5E79D;
-    --white: #f8f9fa;
-
-.books-container {
-    max-width: 1200px;
-}
-
 body.books-page {
     background-color: #e1edf8;
 }
 
-/* 🔍 SEARCH SECTION */
+/*SEARCH SECTION */
 .search-section {
     background-color: #D8C7EC;
     box-shadow: 0 8px 20px rgba(79, 44, 114, 0.12);
@@ -536,7 +523,7 @@ body.books-page {
     transform: scale(1.04);
 }
 
-/* 📝TITEL*/
+/*TITEL*/
 .card-title {
     color: var(--dark-lilac);
     transition: color 0.25s ease;
@@ -555,6 +542,47 @@ body.books-page {
     background-color: var(--light-yellow);
     margin-top: 8px;
     border-radius: 2px;
+}
+
+/* ===========================
+   Scroll to top button
+============================== */
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 10px;  /* 🔼 flyttar upp närmare böckerna */
+    right: 50px;
+    z-index: 999;
+
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#scrollTopBtn img {
+    opacity: 0.9;
+}
+
+#scrollTopBtn:hover img {
+    opacity: 1;
+}
+/* Bilden */
+#scrollTopBtn img {
+    width: 40px;   /* storlek */
+    height: auto;
+    display: block;
+
+    transition: transform 0.2s ease;
+}
+
+/* Hover-effekt */
+#scrollTopBtn:hover img {
+    transform: scale(1.1);
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
 

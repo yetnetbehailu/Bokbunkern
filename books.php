@@ -24,10 +24,13 @@ $stmt = $dbh->query($sql);
 $books = $stmt->fetchAll();
 ?>
 
+<div id="top"></div> 
 <!-- ============================== -->
 <!-- MAIN CONTENT -->
 <!-- ============================== -->
-<main class="container books-container py-5">  
+ 
+<main class="container books-container py-5"> 
+ 
 
   <!-- ============================== -->
   <!-- SEARCH & FILTER -->
@@ -86,11 +89,11 @@ $books = $stmt->fetchAll();
 
     <?php endforeach; ?>
 
- <button id="scrollTopBtn">
-  <img src="assets/images/arrow_up.png" alt="Scrolla upp">
-</button>
-
 </main>
+
+<a href="#top" id="scrollTopBtn">
+  <img src="assets/images/arrow_up_transparent.png" alt="Scrolla upp">
+</a>
 
 <?php
 // ==============================

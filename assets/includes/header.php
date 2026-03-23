@@ -132,7 +132,7 @@ $navLinks = [
     </div>
 
     <!-- Registration link -->
-    <a class="btn btn-membership fs-5" href="add.php">Bli medlem</a>
+    <a class="btn btn-membership fs-5" href="sign-up.php">Bli medlem</a>
 
 <?php endif; ?>
 </div>
