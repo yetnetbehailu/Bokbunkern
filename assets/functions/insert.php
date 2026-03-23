@@ -19,7 +19,7 @@ $stmt->bindParam(':password', $_POST['password']);
 //Send query to database
 try {
     $stmt->execute();
-    header('Location: ../../add.php?action=success');
+    header('Location: ../../sign-up.php?action=success');
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
