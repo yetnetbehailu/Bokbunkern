@@ -11,7 +11,8 @@ if (isset($_POST['login'])) {
     //Checks whether e-mail and password fields are empty
     if (empty($_POST['email']) || empty($_POST['password'])) {
         //Redriect user to error page
-        header('Location: ' . $currentPath . '?error=empty');
+        $separator = strpos($currentPath, '?') !== false ? '&' : '?';
+        header('Location: ' . $currentPath . $separator . 'action=empty');
         exit();
     }
 
@@ -49,7 +50,8 @@ if (isset($_POST['login'])) {
     } else {
         // Redirect user to error page
 
-        header('Location: ' . $currentPath . '?action=error');
+        $separator = strpos($currentPath, '?') !== false ? '&' : '?';
+        header('Location: ' . $currentPath . $separator . 'action=error');
         exit();
     }
 }
