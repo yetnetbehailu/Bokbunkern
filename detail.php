@@ -1,87 +1,78 @@
 <?php
-session_start();
-//include database connection
-require_once 'assets/config/db.php';
-//register information to database
-require_once 'assets/functions/comment-to-database.php';
-//include ability to showcase comments
-require_once 'assets/functions/view-comments.php';
-//include ability to uppdate comments
-require_once 'assets/functions/comment-update.php';
-//get specific comment to edit
-require_once 'assets/functions/select-comment-id.php';
-//include ability to delete comments
-require_once 'assets/functions/delete-comment-function.php';
-// Include header
+//include header
 require_once 'assets/includes/header.php';
 ?>
 
 
-<main class="bg-cust1">
+
+<main class="mt-2">
+
 
     <!-- php sucsess massage -->
-    <?php
-    //check if action is set
-    if (isset($_GET['action'])) {
-        //checks which action is set
-        switch ($_GET['action']) {
-            case 'succsess':
-                echo '
+    <div class="container">
+        <?php
+        //check if action is set
+        if (isset($_GET['action'])) {
+            //checks which action is set
+            switch ($_GET['action']) {
+                case 'success':
+                    echo '
                         <div class="alert alert-success">
                             Kommentaren har laggts upp!
                         </div>
                     ';
-                break;
-            case 'updated ':
-                echo '
+                    break;
+                case 'updated':
+                    echo '
                         <div class="alert alert-success">
-                            Kommentaren har uppdaterats upp!
+                            Kommentaren har uppdaterats!
                         </div>
                     ';
-                break;
-            case 'deleted':
-                echo '
+                    break;
+                case 'deleted':
+                    echo '
                         <div class="alert alert-danger">
                             Kommentaren har raderats!
                         </div>
                     ';
-                break;
+                    break;
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
 
     <!-- Start of detail page -->
     <!-- back button -->
     <div class="m-3">
-        <a src="" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
+        <a href="books.php" class="btnc disabled"><i class="fa-solid fa-arrow-left"></i> Tillbaka</a>
     </div>
 
     <!-- book description -->
-    <div class="container p-4 text-bg-light border rounded">
-        <div class="row align-items-start">
-            <div class="col-2">
-                <img src="assets/images/the-picture-of-dorian-gray.jpg"
-                    class="img-thumbnail"
-                    alt="En bild på bokomslaget till boken The picture of dorian grey. 
-                    En man i vit kavaj stående vilande med arbågen mot en pelare">
+    <div class="container p-4 text-bg-light rounded desc-box mx-auto">
+        <div class="row align-items-center">
+
+            <div class="d-flex justify-content-center">
+                <div class="col-3">
+                    <img src="assets/images/acotar.jpg"
+                        class="rounded w-75 border"
+                        alt="En bild på bokomslaget till boken acotar.">
+                </div>
+
+
+
+
+                <div class="w-cust">
+                    <header class="fs-4 fw-bold">A court of thorns and roses</header>
+                    <p>en romantisk fantasyroman och första delen i en populär bokserie.</p>
+                    <p>Boken handlar om Feyre Archeron, en ung kvinna som lever i fattigdom med sin familj. När hon jagar i skogen dödar hon en varg för att kunna försörja dem. Men vargen visar sig egentligen vara en fae (en magisk varelse).
+                        Som straff kommer en mäktig fae vid namn Tamlin och tar Feyre till sitt magiska rike Prythian. Hon tvingas bo i hans hov, men upptäcker snart att världen av fae är både farlig och fascinerande.</p>
+                    <p>Boken är löst inspirerad av sagan Skönheten och odjuret, men utvecklas till en större fantasyhistoria med politiska intriger och mörkare teman i senare böcker.</p>
+                    <div class="d-flex justify-content-end">
+                        <p><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+                    </div>
+                </div>
             </div>
-            <div class="col-10">
-                <header class="fs-4 fw-bold">The picture of dorian grey</header>
-                <p>'A triumph of execution ... one of the best narratives of
-                    the "double life" of a Victorian gentleman' Peter Ackroyd</p>
-                <p>Oscar Wilde's alluring novel of decadence and sin was a
-                    succès de scandale on publication. It follows Dorian Gray
-                    who, enthralled by his own exquisite portrait, exchanges
-                    his soul for eternal youth and beauty. Influenced by his
-                    friend Lord Henry Wotton, he is drawn into a corrupt double
-                    life, indulging his desires in secret while remaining a
-                    gentleman in the eyes of polite society. Only his portrait
-                    bears the traces of his depravity. This definitive edition
-                    includes a selection of contemporary reviews condemning
-                    the novel's immorality.</p>
-                <p>Edited with an Introduction and notes by ROBERT MIGHALL</p>
-                <p><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
-            </div>
+
         </div>
     </div>
 
@@ -89,14 +80,21 @@ require_once 'assets/includes/header.php';
     <?php if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])): ?>
         <div class="container">
             <!-- add comment button -->
-            <div class="mx-5 mb-3 mt-5 row bg-cust2 rounded p-2">
+            <div class="mx-5 mb-3 mt-5 row bg-cust1 rounded p-2">
                 <form action="detail.php" method="post">
                     <div class="row">
-                        <div class="col-10">
+
+
+
+                        <div class="col">
                             <label for="comment" class="fs-4">Lägg till kommentar</label>
-                            <input class="form-control" type="text" placeholder="Dela din åsikt..." id="comment" name="comment" />
+                            <textarea id="comment" name="comment" rows="2" cols="125" placeholder="Dela din åsikt..."></textarea>
                         </div>
-                        <div class="col text-end align-items-end d-flex">
+
+
+
+
+                        <div class="col text-end align-items-center d-flex">
                             <button class="btnc" type="submit" name="register">
                                 Lägg upp <i class="mx-1 fa-solid fa-arrow-up"></i>
                             </button>
@@ -122,78 +120,59 @@ require_once 'assets/includes/header.php';
     <?php endif; ?>
 
     <!-- comments made -->
+
+
     <?php
     //checks if there are any comments to show
-    if ($stmt->rowCount() > 0) {
+    if ($stmt->rowCount() > 0):
+    ?>
+
+        <?php
         //fetches all comments and shows them on the page
-        while ($row = $stmt->fetch()) {
-            echo '
-                     <div class="bg-cust2 p-3 rounded container">
-            <div class="row p-3 border m-2 bg-white border rounded">
-                <div class="col-1 fa-3x">
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="col-11">
-                    <p class="fw-bold">' . $row['firstname'] . ' ' . $row['lastname'] . ' <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
-                    <p>
-                        ' . $row['comment'] . '
-                    </p>
-                    <div class="row justify-content-between">
-                        <div class="col-10"> <!-- edit and delete button for comment -->
-                            <a href="edit-comment.php?edit=' . $row['comment_id'] . '" class="me-4 edt-btn"><i class="fa-solid fa-pen-to-square ic"></i> Redigera</a>
-                            <a href="delete-comment.php?delete=' . $row['comment_id'] . '" class="edt-btn"><i class="fa-solid fa-trash-can ic"></i> Radera</a>
-                        </div>
-                        <div class="col-2">
+        while ($row = $stmt->fetch()):
+        ?>
+
+            <div class="bg-cust2 p-3 rounded container mb-4">
+                <div class="row p-3 border m-2 bg-white border rounded">
+                    <div class="col-1 fa-3x">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                    <div class="col-11">
+                        <p class="fw-bold"><?php echo $row['firstname'] . ' ' . $row['lastname']; ?> <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
+                        <p>
+                            <?php echo $row['comment']; ?>
+                        </p>
+                        <div class="row justify-content-between">
+                            <div class="col-10"> <!-- edit and delete button for comment -->
+                                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['user_id']): ?>
+                                    <a href="edit.comment.php?edit=<?php echo $row['comment_id']; ?>" class="me-4 edt-btn">
+                                        <i class="fa-solid fa-pen-to-square ic"></i> Redigera
+                                    </a>
+                                    <form method="post" action="detail.php" style="display:inline;">
+                                        <input type="hidden" name="comment_id" value="<?php echo $row['comment_id']; ?>">
+
+                                        <a href="delete.comment.php?delete=<?php echo $row['comment_id']; ?>" name="remove" class="edt-btn">
+                                            <i class="fa-solid fa-trash-can ic"></i> Radera
+                                        </a>
+                                    </form>
+                                <?php endif; ?>
+                            </div>
                             <div class="col-2">
-                                <i class="fa-regular fa-heart"></i>
+                                <div class="col-2">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                    ';
-        }
-    } else {
+        <?php endwhile; ?>
+    <?php else: ?>
         //if there are no comments to show, show this text
-        echo '
-                <div class="alert bg-cust3 text-white container">
-                    Det finns inga kommentarer än, var först med att kommentera!
-                </div>
-            ';
-    }
-    ?>
-
-
-
-
-
-
-    <div class="bg-cust2 p-3 rounded container">
-        <div class="row p-3 border m-2 bg-white border rounded">
-            <div class="col-1 fa-3x">
-                <i class="fa-solid fa-circle-user"></i>
-            </div>
-            <div class="col-11">
-                <p class="fw-bold">Lukas Andersson <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-regular fa-star"></i></p>
-                <p>
-                    WOW, alltså vilken bok. Trodde aldrig att jag skulle
-                    tycka om en klassiker men denna fick mig verkligen
-                    att ändra mig.
-                </p>
-                <div class="row justify-content-between">
-                    <div class="col-10"> <!-- edit and delete button for comment -->
-                        <a href="edit-comment.php" class="me-4 edt-btn"><i class="fa-solid fa-pen-to-square ic"></i> Redigera</a>
-                        <a href="delete-comment.php" class="edt-btn"><i class="fa-solid fa-trash-can ic"></i> Radera</a>
-                    </div>
-                    <div class="col-2">
-                        <div class="col-2">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="alert bg-cust3 text-white container">
+            Det finns inga kommentarer än, var först med att kommentera!
         </div>
-
+    <?php endif; ?>
 </main>
 
 <?php

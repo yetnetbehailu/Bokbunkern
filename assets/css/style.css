@@ -27,14 +27,31 @@
 
     --primary-font: "Unna", serif;
     --secondary-font: "Bricolage Grotesque", sans-serif;
+    --secondary-font: "Bricolage Grotesque", sans-serif;
+}
+
+HTML,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
+    /* 16px default */
     font-size: 1rem;
     /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
+
+main {
+    flex: 1;
+}
+
 
 h1,
 h2,
@@ -241,11 +258,12 @@ h3 {
     color: var(--white);
     transition: background-color 0.25s ease, color 0.25s ease;
     border-radius: 0;
-    flex-shrink: 0; /* Hindrar knappen från att krympa i flex-raden */
+    flex-shrink: 0;
+    /* Hindrar knappen från att krympa i flex-raden */
     padding: 0.8rem 1rem;
 }
 
-.btn-newsletter:hover{
+.btn-newsletter:hover {
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
 }
@@ -406,8 +424,9 @@ h3 {
 }
 
 .footer-links a.active {
-    pointer-events: none; /* Går inte att klicka länken */
-    color: var(--darkest-lilac); 
+    pointer-events: none;
+    /* Går inte att klicka länken */
+    color: var(--darkest-lilac);
     font-weight: 700;
 }
 
@@ -442,55 +461,7 @@ h3 {
     color: var(--darkest-lilac);
 }
 
-/* ===========================
-   Detail page
-============================== */
 
-/* Custom button in css */
-.btnc {
-    text-decoration: none;
-    color: #000000;
-    border: 2px solid #000000;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #ffffff;
-}
-
-.btnc:hover {
-    color: #ffffff;
-    background-color: #000000;
-    border: 2px solid #000000;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-
-/* edit and delete button */
-.edt-btn {
-    text-decoration: underline;
-    color: #000000;
-}
-
-/* ikon color */
-.ic {
-    color: var(--darkest-lilac);
-}
-
-
-/* background color for detail page */
-.bg-cust1 {
-    background-color: var(--light-lilac);
-}
-
-/* background color for comment field */
-.bg-cust2 {
-    background-color: var(--white);
-}
-
-/* background color for "no comments" alert */
-.bg-cust3 {
-    background-color: var(--dark-lilac);
-}
 /* ===========================
    Books page (Mina)
 ============================== */  
