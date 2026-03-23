@@ -585,6 +585,11 @@ body.books-page {
     background-color: var(--dark-lilac);
 }
 
+/* custom width for text on detail page */
+.w-cust {
+    width: 35rem;
+}
+
 
 
 /* ===========================
