@@ -24,10 +24,13 @@ $stmt = $dbh->query($sql);
 $books = $stmt->fetchAll();
 ?>
 
+<div id="top"></div> 
 <!-- ============================== -->
 <!-- MAIN CONTENT -->
 <!-- ============================== -->
-<main class="container books-container">
+ 
+<main class="container books-container py-5"> 
+ 
 
   <!-- ============================== -->
   <!-- SEARCH & FILTER -->
@@ -64,32 +67,33 @@ $books = $stmt->fetchAll();
 
       <div class="col d-flex">
         <!-- Make each book card clickable and pass the book ID to the detail page via URL -->
-       <a href="detail.php?id=<?= $book['id'] ?>" class="text-decoration-none text-dark w-100">
-      <div class="card book-card h-100 w-100">
+        <a href="detail.php?id=<?= $book['id'] ?>" class="text-decoration-none text-dark w-100">
+          <div class="card book-card h-100 w-100">
 
-          <div class="ratio" style="--bs-aspect-ratio: 150%;">
-            <img 
-             src="<?= htmlspecialchars($book['image']) ?>" 
-             alt="<?= htmlspecialchars($book['title']) ?>"
-             class="w-100 h-100 object-fit-cover"
-             loading="lazy"
-             >
+            <div class="ratio" style="--bs-aspect-ratio: 150%;">
+              <img
+                src="<?= htmlspecialchars($book['image']) ?>"
+                alt="<?= htmlspecialchars($book['title']) ?>"
+                class="w-100 h-100 object-fit-cover"
+                loading="lazy">
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><?= htmlspecialchars($book['title']) ?></h5>
+              <p class="card-text mb-0"><?= htmlspecialchars($book['description']) ?></p>
+            </div>
+
           </div>
-
-          <div class="card-body d-flex flex-column">
-           <h5 class="card-title"><?= htmlspecialchars($book['title']) ?></h5>
-           <p class="card-text mb-0"><?= htmlspecialchars($book['description']) ?></p>
-          </div>
-
-        </div>
-    </a>
+        </a>
       </div>
 
     <?php endforeach; ?>
 
-  </section>
-
 </main>
+
+<a href="#top" id="scrollTopBtn">
+  <img src="assets/images/arrow_up_transparent.png" alt="Scrolla upp">
+</a>
 
 <?php
 // ==============================

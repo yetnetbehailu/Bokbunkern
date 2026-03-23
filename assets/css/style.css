@@ -466,26 +466,37 @@ h3 {
    Books page (Mina)
 ============================== */
 
-.books-container {
-    max-width: 1200px;
-}
 
 body.books-page {
-    background-color: #f8f9fa;
+    background-color: #e1edf8;
 }
 
-/* 🔍 SEARCH SECTION */
+/*SEARCH SECTION */
 .search-section {
-    background-color: var(--light-lilac);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: #D8C7EC;
+    box-shadow: 0 8px 20px rgba(79, 44, 114, 0.12);
     border-radius: 1rem;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* INPUT (sökfält) */
+.form-control:focus {
+    border-color: #4f2c72;
+    box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
+}
+
+/* DROPDOWN */
+.form-select:focus {
+    border-color: #4f2c72;
+    box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
 }
 
 
 /* 📦 CARD BAS */
 .card {
     background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid #4f2c72;
     border-radius: 0.75rem;
     overflow: hidden;
     position: relative;
@@ -512,7 +523,7 @@ body.books-page {
     transform: scale(1.04);
 }
 
-/* 📝TITEL*/
+/*TITEL*/
 .card-title {
     color: var(--dark-lilac);
     transition: color 0.25s ease;
@@ -531,6 +542,47 @@ body.books-page {
     background-color: var(--light-yellow);
     margin-top: 8px;
     border-radius: 2px;
+}
+
+/* ===========================
+   Scroll to top button
+============================== */
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 10px;  /* 🔼 flyttar upp närmare böckerna */
+    right: 50px;
+    z-index: 999;
+
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#scrollTopBtn img {
+    opacity: 0.9;
+}
+
+#scrollTopBtn:hover img {
+    opacity: 1;
+}
+/* Bilden */
+#scrollTopBtn img {
+    width: 40px;   /* storlek */
+    height: auto;
+    display: block;
+
+    transition: transform 0.2s ease;
+}
+
+/* Hover-effekt */
+#scrollTopBtn:hover img {
+    transform: scale(1.1);
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
 
