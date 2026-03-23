@@ -24,7 +24,7 @@ require_once 'assets/includes/header.php';
         }
     }
     ?>
-    <form action="add.php" method="POST">
+    <form action="sign-up.php" method="POST">
         <div class="container mt-5">
             <div class="row mb-3">
                 <label for="firstname" class="col-1 col-form-label">Förnamn</label>

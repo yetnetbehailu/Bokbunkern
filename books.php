@@ -27,7 +27,7 @@ $books = $stmt->fetchAll();
 <!-- ============================== -->
 <!-- MAIN CONTENT -->
 <!-- ============================== -->
-<main class="container">
+<main class="container books-container">
 
   <!-- ============================== -->
   <!-- SEARCH & FILTER -->
@@ -63,18 +63,26 @@ $books = $stmt->fetchAll();
     <?php foreach ($books as $book): ?>
 
       <div class="col d-flex">
-        <div class="card book-card h-100 w-100">
+        <!-- Make each book card clickable and pass the book ID to the detail page via URL -->
+       <a href="detail.php?id=<?= $book['id'] ?>" class="text-decoration-none text-dark w-100">
+      <div class="card book-card h-100 w-100">
 
           <div class="ratio" style="--bs-aspect-ratio: 150%;">
-            <img src="<?= $book['image'] ?>" class="w-100 h-100 object-fit-cover">
+            <img 
+             src="<?= htmlspecialchars($book['image']) ?>" 
+             alt="<?= htmlspecialchars($book['title']) ?>"
+             class="w-100 h-100 object-fit-cover"
+             loading="lazy"
+             >
           </div>
 
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><?= $book['title'] ?></h5>
-            <p class="card-text mb-0"><?= $book['description'] ?></p>
+           <h5 class="card-title"><?= htmlspecialchars($book['title']) ?></h5>
+           <p class="card-text mb-0"><?= htmlspecialchars($book['description']) ?></p>
           </div>
 
         </div>
+    </a>
       </div>
 
     <?php endforeach; ?>
