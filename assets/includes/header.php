@@ -1,5 +1,4 @@
 <?php
-//Init session management
 session_start();
 
 // show all errors for debugging
@@ -7,6 +6,16 @@ require_once 'assets/includes/display_errors.php';
 
 // connect to database
 require_once 'assets/config/db.php';
+//include ability to delete comments
+require_once 'assets/functions/delete.comment.function.php';
+//get specific comment to edit
+require_once 'assets/functions/select.comment.id.php';
+//register information to database
+require_once 'assets/functions/comment.to.database.php';
+//include ability to showcase comments
+require_once 'assets/functions/view.comments.php';
+//include ability to uppdate comments
+require_once 'assets/functions/comment.update.php';
 
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
@@ -48,16 +57,16 @@ require_once 'assets/functions/sessions.login.php';
                             <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="index.php">Hem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Böcker</a>
+                            <a class="nav-link fs-5" href="books.php">Böcker</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="#">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Om oss</a>
+                            <a class="nav-link fs-5" href="about.us.php">Om oss</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">FAQ</a>
+                            <a class="nav-link fs-5" href="questions.php">FAQ</a>
                         </li>
                     </ul>
 
