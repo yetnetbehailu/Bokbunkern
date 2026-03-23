@@ -19,11 +19,14 @@
                 <div class="col-md-4">
                     <h4 class="footer-heading">Länkar</h4>
                     <ul class="footer-links list-unstyled">
-                        <li><a href="index.php" class="active">Hem</a></li>
-                        <li><a href="#">Böcker</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">Om oss</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <?php foreach ($navLinks as $file => $label) {
+                            if ($current === $file) {
+                                echo '<li><a href="' . $file . '" class="active">' . $label . '</a></li>';
+                            } else {
+                                echo '<li><a href="' . $file . '">' . $label . '</a></li>';
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
 

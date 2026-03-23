@@ -10,6 +10,16 @@ require_once 'assets/config/db.php';
 
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
+
+$current = basename($_SERVER['PHP_SELF']);
+
+$navLinks = [
+    'index.php' => 'Hem',
+    'books.php' => 'Böcker',
+    'forum.php' => 'Forum',
+    'about.php' => 'Om oss',
+    'faq.php' => 'FAQ'
+];
 ?>
 
 <!DOCTYPE html>
@@ -41,25 +51,18 @@ require_once 'assets/functions/sessions.login.php';
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
-                        <li class="nav-item">
-                            <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="index.php">Hem</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Böcker</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Forum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">Om oss</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="#">FAQ</a>
-                        </li>
+                        <?php foreach ($navLinks as $file => $label) {
+                            if ($current === $file) {
+                                echo '<li class="nav-item">
+                                        <a class="nav-link active fs-5 fw-bolder" href="' . $file . '">' . $label . '</a></li>';
+                            } else {
+                                echo '<li class="nav-item">
+                            <a class="nav-link fs-5" href="' . $file . '">' . $label . '</a></li>';
+                            }
+                        }
+                        ?>
                     </ul>
-
 
                     <!-- Login and logout with functions and dropdown -->
                     <div class="d-flex align-items-center gap-4">
