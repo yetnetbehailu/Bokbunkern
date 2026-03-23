@@ -1,5 +1,5 @@
 <?php
-//unclude header
+//include header
 require_once 'assets/includes/header.php';
 ?>
 

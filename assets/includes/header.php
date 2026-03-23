@@ -20,6 +20,8 @@ require_once 'assets/functions/comment.update.php';
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
 ?>
+
+
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -66,48 +68,105 @@ require_once 'assets/functions/sessions.login.php';
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="questions.php">FAQ</a>
                         </li>
-                        <li class="nav-item"><a href="view.php" class="nav-link">Visa användare</a></li>
-                        <li class="nav-item"><a href="add.php" class="nav-link">Lägg till användare</a></li>
                     </ul>
 
 
-                    <!-- Login and logout with functions and dropdown -->
-                    <div class="d-flex align-items-center gap-4">
-                        <?php if (isset($_SESSION['user_id'])): ?>
-                            <span class="nav-link fs-5 p-2 mb-0">
-                                <?php echo 'Hej ' . htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8'); ?>
-                            </span>
-                            <a class="btn btn-outline-danger fs-5" href="logout.php">Logga ut</a>
-                        <?php else: ?>
-                            <div class="dropdown">
-                                <a class="nav-link fs-5 p-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Logga in
-                                </a>
+<!-- ============================== -->
+<!-- Login and logout with dropdown -->
+<!-- ============================== -->
+<div class="d-flex align-items-center gap-4">
 
-                                <div class="dropdown-menu start-50 translate-middle-x mt-2 p-4" style="width: 270px;">
-                                    <form action="index.php" method="post">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">E-post</label>
-                                            <input type="email" class="form-control" name="email" id="email">
-                                        </div>
+<?php if (isset($_SESSION['user_id'])): ?>
+    <?php 
+    // If user is logged in (session exists)
+    ?>
 
-                                        <div class="mb-3">
-                                            <label for="password" class="form-label">Lösenord</label>
-                                            <input type="password" class="form-control" name="password" id="password">
-                                        </div>
+    <span class="nav-link fs-5 p-2 mb-0">
+        <?php 
+        // Display user's first name safely
+        echo 'Välkommen ' . htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8'); 
+        ?>
+    </span>
 
-                                        <button type="submit" name="login" class="btn btn-success w-100">
-                                            Logga in
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+    <!-- Logout button -->
+    <a class="btn btn-membership fs-5" href="logout.php">Logga ut</a>
 
-                            <a class="btn btn-membership fs-5" href="add.php">Bli medlem</a>
-                        <?php endif; ?>
-                    </div>
+<?php else: ?>
+    <?php 
+    // If user is not logged in → show login dropdown
+    ?>
 
+    <div class="dropdown">
+        <!-- Dropdown toggle button -->
+        <a class="nav-link fs-5 p-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Logga in
+        </a>
+
+        <!-- Dropdown menu with login form -->
+        <div class="dropdown-menu start-50 translate-middle-x mt-2 p-4" style="width: 270px;">
+
+            <form action="<?= htmlspecialchars($_SERVER['REQUEST_URI'] ?? 'index.php') ?>" method="post">
+
+                <!-- Email input -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-post</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Lösenord</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" name="login" class="btn btn-success w-100">
+                    Logga in
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Registration link -->
+    <a class="btn btn-membership fs-5" href="add.php">Bli medlem</a>
+
+<?php endif; ?>
+</div>
+
+    </div>
+   </div>
+ </nav>
+</header>
+
+<?php
+// Check if an action parameter exists in the URL
+if (isset($_GET['action'])) {
+
+    // Check which action is set
+    switch ($_GET['action']) {
+
+        case 'empty':
+            // Show warning if fields are empty
+            echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-warning text-center" style="max-width: 500px; width: 100%;">
+                    Fyll i både e-post och lösenord!
                 </div>
             </div>
-        </nav>
-    </header>
+            ';
+            break;
+
+        case 'error':
+            // Show error if login is incorrect
+            echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-danger text-center" style="max-width: 500px; width: 100%;">
+                    Fel e-post eller lösenord!
+                </div>
+            </div>
+            ';
+            break;
+    }
+}
+?>
