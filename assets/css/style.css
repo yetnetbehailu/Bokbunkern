@@ -495,26 +495,50 @@ h3 {
    Books page (Mina)
 ============================== */  
 
+
+/* --text-color: ; Not yet decided */
+    --dark-blue: #507A87;
+    --light-blue: #C9DEF1;
+    --dark-lilac: #79559e;
+    --darkest-lilac: #4f2c72;
+    --light-lilac: #D8C7EC;
+    --light-yellow: #F5E79D;
+    --white: #f8f9fa;
+
 .books-container {
   max-width: 1200px;
 }
 
 body.books-page {
-    background-color: #f8f9fa;
+    background-color: #e1edf8;
 }
 
 /* 🔍 SEARCH SECTION */
 .search-section {
-    background-color: var(--light-lilac);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: #D8C7EC;
+    box-shadow: 0 8px 20px rgba(79, 44, 114, 0.12);
     border-radius: 1rem;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* INPUT (sökfält) */
+.form-control:focus {
+    border-color: #4f2c72;
+    box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
+}
+
+/* DROPDOWN */
+.form-select:focus {
+    border-color: #4f2c72;
+    box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
 }
 
 
 /* 📦 CARD BAS */
 .card {
     background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid #4f2c72;
     border-radius: 0.75rem;
     overflow: hidden;
     position: relative;
