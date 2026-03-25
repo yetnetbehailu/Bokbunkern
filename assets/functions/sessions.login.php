@@ -1,9 +1,9 @@
 <?php
-//checks whether submit button has been set
+// Check if login form was submitted
 if (isset($_POST['login'])) {
 
     // Always redirect back to the page where login was submitted.
-     $currentPath = $_SERVER['REQUEST_URI'] ?? '/index.php';
+    $currentPath = $_SERVER['REQUEST_URI'] ?? '/index.php';
     if (!is_string($currentPath) || $currentPath === '' || $currentPath[0] !== '/') {
         $currentPath = '/index.php';
     }
