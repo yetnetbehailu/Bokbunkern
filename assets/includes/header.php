@@ -74,102 +74,120 @@ $navLinks = [
                         ?>
                     </ul>
 
-<!-- ============================== -->
-<!-- Login and logout with dropdown -->
-<!-- ============================== -->
-<div class="d-flex align-items-center gap-4">
+                    <?php
+                    // Remove query parameters from current URL (used for login form)
+                    $cleanPath = strtok($_SERVER['REQUEST_URI'] ?? 'index.php', '?');
+                    ?>
 
-<?php if (isset($_SESSION['user_id'])): ?>
-    <?php 
-    // If user is logged in (session exists)
-    ?>
+                    <!-- ============================== -->
+                    <!-- Login and logout with dropdown -->
+                    <!-- ============================== -->
+                    <div class="d-flex align-items-center gap-4">
 
-    <span class="nav-link fs-5 p-2 mb-0">
-        <?php 
-        // Display user's first name safely
-        echo 'Välkommen ' . htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8'); 
-        ?>
-    </span>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <?php
+                            // If user is logged in (session exists)
+                            ?>
 
-    <!-- Logout button -->
-    <a class="btn btn-membership fs-5" href="logout.php">Logga ut</a>
+                            <span class="nav-link fs-5 p-2 mb-0">
+                                <?php
+                                // Display user's first name safely
+                                echo 'Välkommen ' . htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8');
+                                ?>
+                            </span>
 
-<?php else: ?>
-    <?php 
-    // If user is not logged in → show login dropdown
-    ?>
+                            <!-- Logout button -->
+                            <a class="btn btn-membership fs-5" href="logout.php">Logga ut</a>
 
-    <div class="dropdown">
-        <!-- Dropdown toggle button -->
-        <a class="nav-link fs-5 p-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            Logga in
-        </a>
+                        <?php else: ?>
+                            <?php
+                            // If user is not logged in → show login dropdown
+                            ?>
 
-        <!-- Dropdown menu with login form -->
-        <div class="dropdown-menu start-50 translate-middle-x mt-2 p-4" style="width: 270px;">
+                            <div class="dropdown">
+                                <!-- Dropdown toggle button -->
+                                <a class="nav-link fs-5 p-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    Logga in
+                                </a>
 
-            <form action="<?= htmlspecialchars($_SERVER['REQUEST_URI'] ?? 'index.php') ?>" method="post">
+                                <!-- Dropdown menu with login form -->
+                                <div class="dropdown-menu start-50 translate-middle-x mt-2 p-4" style="width: 270px;">
 
-                <!-- Email input -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-post</label>
-                    <input type="email" class="form-control" name="email" id="email">
+                                    <!-- Login form (uses clean URL without query parameters) -->
+                                    <form action="<?= htmlspecialchars($cleanPath) ?>" method="post">
+
+                                        <!-- Email input -->
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">E-post</label>
+                                            <input type="email" class="form-control" name="email" id="email">
+                                        </div>
+
+                                        <!-- Password input -->
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Lösenord</label>
+                                            <input type="password" class="form-control" name="password" id="password">
+                                        </div>
+
+                                        <!-- Submit button -->
+                                        <button type="submit" name="login" class="btn btn-success w-100">
+                                            Logga in
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Registration link -->
+                            <a class="btn btn-membership fs-5" href="sign-up.php">Bli medlem</a>
+
+                        <?php endif; ?>
+
+                    </div>
+
                 </div>
+            </div>
+        </nav>
+    </header>
 
-                <!-- Password input -->
-                <div class="mb-3">
-                    <label for="password" class="form-label">Lösenord</label>
-                    <input type="password" class="form-control" name="password" id="password">
-                </div>
+    <?php
+    // Check if an action parameter exists in the URL
+    if (isset($_GET['action'])) {
 
-                <!-- Submit button -->
-                <button type="submit" name="login" class="btn btn-success w-100">
-                    Logga in
-                </button>
+        // Display message based on action value
+        switch ($_GET['action']) {
 
-            </form>
-        </div>
-    </div>
-
-    <!-- Registration link -->
-    <a class="btn btn-membership fs-5" href="sign-up.php">Bli medlem</a>
-
-<?php endif; ?>
-</div>
-
-    </div>
-   </div>
- </nav>
-</header>
-
-<?php
-// Check if an action parameter exists in the URL
-if (isset($_GET['action'])) {
-
-    // Check which action is set
-    switch ($_GET['action']) {
-
-        case 'empty':
-            // Show warning if fields are empty
-            echo '
+            case 'empty':
+                // Show warning if fields are empty
+                echo '
             <div class="d-flex justify-content-center mt-3">
                 <div class="alert alert-warning text-center" style="max-width: 500px; width: 100%;">
                     Fyll i både e-post och lösenord!
                 </div>
             </div>
             ';
-            break;
+                break;
 
-        case 'error':
-            // Show error if login is incorrect
-            echo '
+            case 'error':
+                // Show error if login is incorrect
+                echo '
             <div class="d-flex justify-content-center mt-3">
                 <div class="alert alert-danger text-center" style="max-width: 500px; width: 100%;">
                     Fel e-post eller lösenord!
                 </div>
             </div>
             ';
-            break;
+                break;
+
+            case 'logout':
+                // Show message when user logs out
+                echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-info text-center" style="max-width: 500px; width: 100%;">
+                    Du har loggats ut.
+                </div>
+            </div>
+            ';
+                break;
+        }
     }
-}
-?>
+    ?>

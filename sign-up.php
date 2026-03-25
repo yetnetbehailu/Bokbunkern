@@ -1,31 +1,42 @@
 <?php
-//Show errors for debugging
+// Show errors (for development/debugging)
 require_once 'assets/includes/display_errors.php';
-//Include database connection
+
+// Include database connection
 require_once 'assets/config/db.php';
-// Register information to database
+
+// Handle user registration (insert into database)
 require_once 'assets/functions/insert.php';
-//Include header and navigation
+
+// Include header and navigation
 require_once 'assets/includes/header.php';
 ?>
-<main class="container mt-5">
+
+<main class="container py-5">
+
     <?php
-    //Checks if a action is set
+    // Check if an action parameter exists in the URL
     if (isset($_GET['action'])) {
-        //Checks which action is set
+
+        // Display message based on action value
         switch ($_GET['action']) {
             case 'success':
                 echo '
-                 div class="alert alert-success">
-                Användaren har registrerats!
-              </div>
-              ';
+                <div class="alert alert-success">
+                    Användaren har registrerats!
+                </div>
+                ';
                 break;
         }
     }
     ?>
+
+    <!-- Registration form -->
     <form action="sign-up.php" method="POST">
+
         <div class="container mt-5">
+
+            <!-- First name -->
             <div class="row mb-3">
                 <label for="firstname" class="col-1 col-form-label">Förnamn</label>
                 <div class="col-4">
@@ -33,6 +44,7 @@ require_once 'assets/includes/header.php';
                 </div>
             </div>
 
+            <!-- Last name -->
             <div class="row mb-3">
                 <label for="lastname" class="col-1 col-form-label">Efternamn</label>
                 <div class="col-4">
@@ -40,19 +52,23 @@ require_once 'assets/includes/header.php';
                 </div>
             </div>
 
+            <!-- Email -->
             <div class="row mb-3">
-                <label for="email" class="col-1 col-form-label">E-post</label>
+                <label for="signup-email" class="col-1 col-form-label">E-post</label>
                 <div class="col-4">
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="signup-email" name="email">
                 </div>
             </div>
 
+            <!-- Password -->
             <div class="row mb-3">
-                <label for="password" class="col-1 col-form-label">Lösenord</label>
+                <label for="signup-password" class="col-1 col-form-label">Lösenord</label>
                 <div class="col-4">
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" class="form-control" id="signup-password" name="password">
                 </div>
             </div>
+
+            <!-- Submit button -->
             <button type="submit" class="btn btn-primary" name="register">
                 <i class="fas fa-circle-plus"></i> Registrera
             </button>
@@ -60,9 +76,8 @@ require_once 'assets/includes/header.php';
         </div>
     </form>
 
-
-
 </main>
+
 <?php
 // Include footer
 require_once 'assets/includes/footer.php';

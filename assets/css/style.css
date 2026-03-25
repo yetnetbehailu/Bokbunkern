@@ -471,50 +471,60 @@ body.books-page {
     background-color: #e1edf8;
 }
 
-/*SEARCH SECTION */
+/* ===========================
+   Search section
+============================== */
 .search-section {
     background-color: #D8C7EC;
-    box-shadow: 0 8px 20px rgba(79, 44, 114, 0.12);
-    border-radius: 1rem;
-    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #79559e;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
-/* INPUT (sökfält) */
+/* ===========================
+   Form inputs (focus styles)
+============================== */
+/* Input styles applied when focused (active) */
 .form-control:focus {
     border-color: #4f2c72;
     box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
 }
 
-/* DROPDOWN */
+/* Dropdown (category filter) */
 .form-select:focus {
     border-color: #4f2c72;
     box-shadow: 0 0 0 0.2rem rgba(122, 85, 158, 0.455);
 }
 
 
-/* 📦 CARD BAS */
+/* ===========================
+   Book card (base style)
+   Defines layout, colors and transitions
+=========================== */
 .card {
     background-color: #ffffff;
     border: 1px solid #4f2c72;
     border-radius: 0.75rem;
+    /* Keeps image inside card when zooming */
     overflow: hidden;
-    position: relative;
+    /* Smooth hover animation */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/*SHADOW */
-.book-grid .card {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
 
-/* HOVER*/
+/* ===========================
+   Card hover effect
+   Lifts the card and adds shadow for depth
+=========================== */
 .book-grid .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
-/*IMAGE ZOOM */
+/* ===========================
+   Image zoom effect
+=========================== */
 .book-grid .card img {
     transition: transform 0.35s ease;
 }
@@ -523,17 +533,30 @@ body.books-page {
     transform: scale(1.04);
 }
 
-/*TITEL*/
+/* ===========================
+   Card text styling
+=========================== */
 .card-title {
     color: var(--dark-lilac);
-    transition: color 0.25s ease;
+    /* Smoothly animates text color and opacity changes */
+    transition: color 0.25s ease, opacity 0.25s ease;
 }
 
-.book-grid .card:hover .card-title {
+.card-text {
+    color: var(--dark-lilac);
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+/* Text color changes on hover */
+.book-grid .card:hover .card-title,
+.book-grid .card:hover .card-text {
     color: var(--darkest-lilac);
+    opacity: 1;
 }
 
-/*GULT STRECK*/
+/* ===========================
+   Yellow line
+=========================== */
 .card-text::after {
     content: "";
     display: block;
@@ -546,12 +569,15 @@ body.books-page {
 
 /* ===========================
    Scroll to top button
-============================== */
+=========================== */
 
 #scrollTopBtn {
     position: fixed;
-    bottom: 10px;  /* 🔼 flyttar upp närmare böckerna */
+
+    /* Positions the button in bottom-right corner */
+    bottom: 10px;
     right: 50px;
+
     z-index: 999;
 
     background: none;
@@ -559,24 +585,23 @@ body.books-page {
     padding: 0;
 }
 
+/* Button image */
 #scrollTopBtn img {
-    opacity: 0.9;
-}
-
-#scrollTopBtn:hover img {
-    opacity: 1;
-}
-/* Bilden */
-#scrollTopBtn img {
-    width: 40px;   /* storlek */
+    width: 40px;
+    /* size */
     height: auto;
     display: block;
 
-    transition: transform 0.2s ease;
+    /* Slight transparency by default */
+    opacity: 0.9;
+
+    /* Smooth hover animation */
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Hover-effekt */
+/* Hover effect */
 #scrollTopBtn:hover img {
+    opacity: 1;
     transform: scale(1.1);
 }
 
