@@ -63,7 +63,7 @@ if (isset($_GET['action'])) {
                 <!-- Carousel -->
                 <div class="col-md-6 d-flex justify-content-center pe-5">
                     <div class="book-carousel">
-                        <img src="assets/images/rygga-inte-undan.webp" alt="" class="book-card-hero">
+                        <img src="assets/images/rygga-inte-undan.webp" alt="Bokomslaget till 'Rygga inte undan'" class="book-card-hero">
                     </div>
                 </div>
             </div>
@@ -100,10 +100,10 @@ if (isset($_GET['action'])) {
                                     och rösta fram nästa månads läsning.
                                 </p>
                                 <a href="#" class="explore-link">
-                                    <img src="assets/images/explore-arrow.png" class="explore-arrow" alt="">
+                                    <img src="assets/images/explore-arrow.png" class="explore-arrow" alt="Purple right-arrow">
                                 </a>
                             </div>
-                            <img src="assets/images/explore-forum.png" class="explore-forum-img" alt="">
+                            <img src="assets/images/explore-forum.png" class="explore-forum-img" alt="Illustration av personer som sitter och står vid en hög böcker medan de läser">
                         </div>
                     </div>
                 </div>
@@ -137,17 +137,17 @@ if (isset($_GET['action'])) {
         <h2 class="text-center">Så funkar bokklubben</h2>
         <ol class="d-flex instructions">
             <li>
-                <img src="assets/images/join.svg" alt="">
+                <img src="assets/images/join.svg" alt="Illustration av en person som registrerar sig som medlem">
                 <h3>Bli medlem</h3>
                 <p>Registrera dig snabbt och enkelt</p>
             </li>
             <li>
-                <img src="assets/images/choose-book.svg" alt="">
+                <img src="assets/images/choose-book.svg" alt="Illustration av en person som väljer en bok att läsa">
                 <h3>Välj bok</h3>
                 <p>Hitta något nytt att läsa varje månad</p>
             </li>
             <li>
-                <img src="assets/images/community.svg" alt="">
+                <img src="assets/images/community.svg" alt="Illustration av personer som diskuterar och delar tankar i en bokklubb">
                 <h3>Diskutera</h3>
                 <p>Dela dina tankar med andra medlemmar</p>
             </li>

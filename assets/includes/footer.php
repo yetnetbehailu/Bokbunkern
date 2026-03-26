@@ -5,7 +5,7 @@
                 <!-- Logo and tagline -->
                 <div class="col-md-4">
                     <div class="d-flex align-items-center mb-3">
-                        <a href="index.php"><img src="assets/images/logo-bokbunkern.webp" class="footer-logo me-2" alt=""></a>
+                        <a href="index.php"><img src="assets/images/logo-bokbunkern.webp" class="footer-logo me-2" alt="Bokbunkerns logotyp, bokhög med två lysande ögon"></a>
                         <a href="index.php" class="footer-logo-link">
                             <span class="footer-logo-text">Bokbunkern</span>
                         </a>

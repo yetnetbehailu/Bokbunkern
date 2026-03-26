@@ -41,7 +41,7 @@ $navLinks = [
             <div class="container-fluid pe-0">
 
                 <a class="navbar-brand d-flex align-items-center p-0" href="index.php">
-                    <img class="logo-img me-3" src="assets/images/logo-bokbunkern.webp" alt="">
+                    <img class="logo-img me-3" src="assets/images/logo-bokbunkern.webp" alt="Bokbunkerns logotyp, bokhög med två lysande ögon">
                     <span class="logo-text">Bokbunkern</span>
                 </a>
 
