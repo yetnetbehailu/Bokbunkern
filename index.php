@@ -2,7 +2,48 @@
 // Include header
 require_once 'assets/includes/header.php';
 ?>
+<?php
+// Check if an action parameter exists in the URL
+if (isset($_GET['action'])) {
 
+    // Display message based on action value
+    switch ($_GET['action']) {
+
+        case 'empty':
+            // Show warning if fields are empty
+            echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-warning text-center" style="max-width: 500px; width: 100%;">
+                    Fyll i både e-post och lösenord!
+                </div>
+            </div>
+            ';
+            break;
+
+        case 'error':
+            // Show error if login is incorrect
+            echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-danger text-center" style="max-width: 500px; width: 100%;">
+                    Fel e-post eller lösenord!
+                </div>
+            </div>
+            ';
+            break;
+
+        case 'logout':
+            // Show message when user logs out
+            echo '
+            <div class="d-flex justify-content-center mt-3">
+                <div class="alert alert-info text-center" style="max-width: 500px; width: 100%;">
+                    Du har loggats ut.
+                </div>
+            </div>
+            ';
+            break;
+    }
+}
+?>
 <main>
     <section class="hero-bg container-fluid">
         <div class="container hero-content">
@@ -15,14 +56,14 @@ require_once 'assets/includes/header.php';
                             delta i livliga forumdiskussioner och hitta en gemenskap
                             bland andra bokälskare.
                         </p>
-                        <a href="#" class="btn btn-explore-books">Utforska böcker</a>
+                        <a href="books.php" class="btn btn-explore-books">Utforska böcker</a>
                     </div>
                 </div>
 
                 <!-- Carousel -->
-                <div class="col-md-6">
+                <div class="col-md-6 d-flex justify-content-center pe-5">
                     <div class="book-carousel">
-
+                        <img src="assets/images/rygga-inte-undan.webp" alt="" class="book-card-hero">
                     </div>
                 </div>
             </div>
@@ -119,46 +160,59 @@ require_once 'assets/includes/header.php';
         <div class="reviews-carousel">
             <div class="review-card">
                 <div class="review-header">
-                    <img src="assets/images/profile1.jpg" alt="Profilbild" class="review-avatar">
-                    <span class="review-name">Anna</span>
+                    <img src="assets/images/profile1.webp" alt="Profilbild" class="review-avatar">
+                    <span class="review-name">Ahmed Mo</span>
                 </div>
 
                 <p class="review-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Jag har aldrig känt mig så välkommen i en bokklubb.
+                    Diskussionerna här gör varje bok dubbelt så bra.
                 </p>
 
                 <div class="review-rating">
-                    ★★★★☆
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
             </div>
 
             <div class="review-card">
                 <div class="review-header">
                     <img src="assets/images/profile2.jpg" alt="Profilbild" class="review-avatar">
-                    <span class="review-name">Johan</span>
+                    <span class="review-name">Rosa Gonzales</span>
                 </div>
 
                 <p class="review-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Det bästa är gemenskapen — man hittar alltid någon som läser samma sak och vill prata om det.
                 </p>
 
                 <div class="review-rating">
-                    ★★★★★
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
             </div>
 
             <div class="review-card">
                 <div class="review-header">
-                    <img src="assets/images/profile3.jpg" alt="Profilbild" class="review-avatar">
-                    <span class="review-name">Sara</span>
+                    <img src="assets/images/profile3.webp" alt="Profilbild" class="review-avatar">
+                    <span class="review-name">Zenit Beyene</span>
                 </div>
 
                 <p class="review-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Bokbunkern har fått mig att läsa mer, tänka mer och
+                    upptäcka böcker jag aldrig hade hittat själv.
                 </p>
 
                 <div class="review-rating">
-                    ★★★★☆
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
             </div>
         </div>

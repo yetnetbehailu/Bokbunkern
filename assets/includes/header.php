@@ -3,20 +3,8 @@ session_start();
 
 // show all errors for debugging
 require_once 'assets/includes/display_errors.php';
-
 // connect to database
 require_once 'assets/config/db.php';
-//include ability to delete comments
-require_once 'assets/functions/delete.comment.function.php';
-//get specific comment to edit
-require_once 'assets/functions/select.comment.id.php';
-//register information to database
-require_once 'assets/functions/comment.to.database.php';
-//include ability to showcase comments
-require_once 'assets/functions/view.comments.php';
-//include ability to uppdate comments
-require_once 'assets/functions/comment.update.php';
-
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
 
@@ -49,7 +37,7 @@ $navLinks = [
 
 <body class="<?php echo isset($pageClass) ? htmlspecialchars($pageClass, ENT_QUOTES, 'UTF-8') : ''; ?>">
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
             <div class="container-fluid pe-0">
 
                 <a class="navbar-brand d-flex align-items-center p-0" href="index.php">
@@ -148,46 +136,3 @@ $navLinks = [
             </div>
         </nav>
     </header>
-
-    <?php
-    // Check if an action parameter exists in the URL
-    if (isset($_GET['action'])) {
-
-        // Display message based on action value
-        switch ($_GET['action']) {
-
-            case 'empty':
-                // Show warning if fields are empty
-                echo '
-            <div class="d-flex justify-content-center mt-3">
-                <div class="alert alert-warning text-center" style="max-width: 500px; width: 100%;">
-                    Fyll i både e-post och lösenord!
-                </div>
-            </div>
-            ';
-                break;
-
-            case 'error':
-                // Show error if login is incorrect
-                echo '
-            <div class="d-flex justify-content-center mt-3">
-                <div class="alert alert-danger text-center" style="max-width: 500px; width: 100%;">
-                    Fel e-post eller lösenord!
-                </div>
-            </div>
-            ';
-                break;
-
-            case 'logout':
-                // Show message when user logs out
-                echo '
-            <div class="d-flex justify-content-center mt-3">
-                <div class="alert alert-info text-center" style="max-width: 500px; width: 100%;">
-                    Du har loggats ut.
-                </div>
-            </div>
-            ';
-                break;
-        }
-    }
-    ?>

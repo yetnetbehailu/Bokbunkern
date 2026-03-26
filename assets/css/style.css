@@ -15,8 +15,7 @@
    Global styles
 ============================== */
 :root {
-    /* --text-color: ; Not yet decided */
-    --dark-blue: #507A87;
+    --dark-blue: #92adcd;
     --light-blue: #C9DEF1;
     --dark-lilac: #79559e;
     --darkest-lilac: #4f2c72;
@@ -27,10 +26,9 @@
 
     --primary-font: "Unna", serif;
     --secondary-font: "Bricolage Grotesque", sans-serif;
-    --secondary-font: "Bricolage Grotesque", sans-serif;
 }
 
-HTML,
+html,
 body {
     height: 100%;
     margin: 0;
@@ -40,10 +38,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    font-size: 1rem;
-    /* 16px default */
-    font-size: 1rem;
-    /* 16px default */
+    font-size: 1rem; /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
@@ -51,7 +46,6 @@ body {
 main {
     flex: 1;
 }
-
 
 h1,
 h2,
@@ -169,6 +163,12 @@ h3 {
 .btn-explore-books:hover {
     background-color: var(--darkest-lilac);
     color: var(--light-yellow);
+}
+
+.book-card-hero {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
 }
 
 /* ===========================
@@ -344,7 +344,7 @@ h3 {
     border: 2px solid var(--darkest-lilac);
     border-radius: 12px;
     padding: 1.5rem;
-    width: 300px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -367,6 +367,7 @@ h3 {
 
 .review-name {
     font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .review-text {
