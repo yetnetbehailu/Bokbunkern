@@ -540,16 +540,36 @@ body.books-page {
     color: var(--dark-lilac);
     /* Smoothly animates text color and opacity changes */
     transition: color 0.25s ease, opacity 0.25s ease;
+    margin-bottom: 2px; 
 }
 
 .card-text {
     color: var(--dark-lilac);
-    transition: color 0.25s ease, opacity 0.25s ease;
+    transition: color 0.25s ease, opacity 0.25s ease; 
+}
+
+/* Author styling */
+.author {
+    font-size: 0.90rem;
+    color: var(--dark-lilac);
+    font-style: italic;
+
+    margin-top: 0;
+    margin-bottom: 6px;
+
+    opacity: 0.8;
+    letter-spacing: 0.3px;
 }
 
 /* Text color changes on hover */
 .book-grid .card:hover .card-title,
 .book-grid .card:hover .card-text {
+    color: var(--darkest-lilac);
+    opacity: 1;
+}
+
+/* Author hover */
+.book-grid .card:hover .author {
     color: var(--darkest-lilac);
     opacity: 1;
 }

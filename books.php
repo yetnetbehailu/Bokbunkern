@@ -76,6 +76,7 @@ $books = $stmt->fetchAll();
 
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title h5"><?= htmlspecialchars($book['title']) ?></h3>
+                <p class="author mb-2"><em><?= htmlspecialchars($book['author']) ?></em></p>
                 <p class="card-text mb-0"><?= htmlspecialchars($book['description']) ?></p>
               </div>
 

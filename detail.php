@@ -48,12 +48,12 @@ require_once 'assets/includes/header.php';
         <div class="row align-items-center">
             <div class="d-flex justify-content-center">
                 <div class="col-3">
-                    <img src="assets/images/acotar.jpg"
+                    <img src="assets/images/a-court-of-thornes-and-roses.webp"
                         class="rounded w-75 border"
                         alt="En bild på bokomslaget till boken acotar.">
                 </div>
                 <div class="w-cust textc-cust">
-                    <header class="fs-4 fw-bold">A court of thorns and roses</header>
+                    <header class="fs-4 fw-bold">A court of thornes and roses</header>
                     <p>en romantisk fantasyroman och första delen i en populär bokserie.</p>
                     <p>Boken handlar om Feyre Archeron, en ung kvinna som lever i fattigdom med sin familj. När hon jagar i skogen dödar hon en varg för att kunna försörja dem. Men vargen visar sig egentligen vara en fae (en magisk varelse).
                         Som straff kommer en mäktig fae vid namn Tamlin och tar Feyre till sitt magiska rike Prythian. Hon tvingas bo i hans hov, men upptäcker snart att världen av fae är både farlig och fascinerande.</p>
