@@ -23,6 +23,18 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+-- --------------------------------
+-- Tabel: `newsletter_subscribers`
+-- To store email addresses for newsletter signups.
+-- Unique constraint to prevent double registrations of email addresses.
+-- --------------------------------
+CREATE TABLE `newsletter_subscribers` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`email`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Tabellstruktur `books`
 --
