@@ -41,11 +41,11 @@ CREATE TABLE `newsletter_subscribers` (
 
 CREATE TABLE `books` (
   `id` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `author` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
+  `author` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `description` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `category` varchar(100) NOT NULL
+  `image` VARCHAR(255) NOT NULL,
+  `category` VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
