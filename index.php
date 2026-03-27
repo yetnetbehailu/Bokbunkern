@@ -1,8 +1,7 @@
 <?php
 // Include header
 require_once 'assets/includes/header.php';
-?>
-<?php
+
 // Check if an action parameter exists in the URL
 if (isset($_GET['action'])) {
 
@@ -44,6 +43,7 @@ if (isset($_GET['action'])) {
     }
 }
 ?>
+
 <main>
     <!-- Hero introduction-->
     <section class="hero-bg container-fluid">
@@ -84,7 +84,7 @@ if (isset($_GET['action'])) {
                             <li><i class="fa-regular fa-face-grin-hearts me-2 fs-5"></i>Få personliga bokrekommendationer</li>
                             <li><i class="fa-regular fa-comments me-2 fs-5"></i>Gå med i diskussionsforum</li>
                             <li><i class="fa-regular fa-flag me-2 fs-5"></i>Följ läsutmaningar</li>
-                            <li><i class="fa-regular fa-calendar-check me-2 fs-5"></i></i>Delta i våra klubbevent</li>
+                            <li><i class="fa-regular fa-calendar-check me-2 fs-5"></i>Delta i våra klubbevent</li>
                             <li><i class="fa-solid fa-bullhorn me-2 fs-5"></i>Var med och forma bokklubben</li>
                         </ul>
                     </div>
