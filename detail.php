@@ -1,16 +1,6 @@
 <?php
 //include header
 require_once 'assets/includes/header.php';
-//include ability to delete comments
-require_once 'assets/functions/delete.comment.function.php';
-//get specific comment to edit
-require_once 'assets/functions/select.comment.id.php';
-//register information to database
-require_once 'assets/functions/comment.to.database.php';
-//include ability to showcase comments
-require_once 'assets/functions/view.comments.php';
-//include ability to uppdate comments
-require_once 'assets/functions/comment.update.php';
 ?>
 
 <main class="mt-2 textc-cust">
