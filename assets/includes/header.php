@@ -7,6 +7,16 @@ require_once 'assets/includes/display_errors.php';
 require_once 'assets/config/db.php';
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
+//include ability to delete comments
+require_once 'assets/functions/delete.comment.function.php';
+//get specific comment to edit
+require_once 'assets/functions/select.comment.id.php';
+//register information to database
+require_once 'assets/functions/comment.to.database.php';
+//include ability to showcase comments
+require_once 'assets/functions/view.comments.php';
+//include ability to uppdate comments
+require_once 'assets/functions/comment.update.php';
 
 $current = basename($_SERVER['PHP_SELF']);
 
