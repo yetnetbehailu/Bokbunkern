@@ -45,6 +45,7 @@ if (isset($_GET['action'])) {
 }
 ?>
 <main>
+    <!-- Hero introduction-->
     <section class="hero-bg container-fluid">
         <div class="container hero-content">
 
@@ -60,7 +61,7 @@ if (isset($_GET['action'])) {
                     </div>
                 </div>
 
-                <!-- Carousel -->
+                <!-- Reminder to: add book carousel -->
                 <div class="col-md-6 d-flex justify-content-center pe-5">
                     <div class="book-carousel">
                         <img src="assets/images/rygga-inte-undan.webp" alt="Bokomslaget till 'Rygga inte undan'" class="book-card-hero">
@@ -71,7 +72,7 @@ if (isset($_GET['action'])) {
         </div>
     </section>
 
-    <!--  -->
+    <!-- Bokbunkern activities presents site offers -->
     <section class="bokbunkern-activities">
         <div class="container">
             <div class="row gx-5 align-items-stretch">
@@ -112,7 +113,7 @@ if (isset($_GET['action'])) {
         </div>
     </section>
 
-    <!-- -->
+    <!-- Newsletter subscription section allowing users to signup with their email -->
     <section class="newsletter-content">
         <form class="container" method="POST" action="assets/includes/newsletter_subscription.php">
             <h3 class="mb-2">Få boktips direkt i inkorgen</h3>
@@ -132,7 +133,7 @@ if (isset($_GET['action'])) {
         </form>
     </section>
 
-    <!--  -->
+    <!-- Visual guide presenting how the book club works-->
     <section class="container-fluid visual-guide">
         <h2 class="text-center">Så funkar bokklubben</h2>
         <ol class="d-flex instructions">
@@ -154,9 +155,10 @@ if (isset($_GET['action'])) {
         </ol>
     </section>
 
-    <!-- -->
+    <!-- Member reviews -->
     <section class="member-reviews">
         <h2 class="text-center">Vad våra medlemmar tycker</h2>
+        <!-- Reminder to: Add reviews carousel -->
         <div class="reviews-carousel">
             <div class="review-card">
                 <div class="review-header">

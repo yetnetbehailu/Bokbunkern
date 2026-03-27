@@ -8,6 +8,7 @@ require_once 'assets/config/db.php';
 // Process login to database
 require_once 'assets/functions/sessions.login.php';
 
+// Determines current page and defines the navigation links credit: Montathar Faraon
 $current = basename($_SERVER['PHP_SELF']);
 
 $navLinks = [
@@ -36,7 +37,9 @@ $navLinks = [
 </head>
 
 <body class="<?php echo isset($pageClass) ? htmlspecialchars($pageClass, ENT_QUOTES, 'UTF-8') : ''; ?>">
+
     <header>
+        <!-- Reminder: fix sticky navbar bug (currently NOT sticking) -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
             <div class="container-fluid pe-0">
 
@@ -45,11 +48,13 @@ $navLinks = [
                     <span class="logo-text">Bokbunkern</span>
                 </a>
 
+                <!-- Bootstrap added navbar toogle class for future responsive adjustment -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                        <!-- Dynamically generates header navigation links based on $navLinks array -->
                         <?php foreach ($navLinks as $file => $label) {
                             if ($current === $file) {
                                 echo '<li class="nav-item">
@@ -63,6 +68,7 @@ $navLinks = [
                     </ul>
 
                     <?php
+
                     // Remove query parameters from current URL (used for login form)
                     $cleanPath = strtok($_SERVER['REQUEST_URI'] ?? 'index.php', '?');
                     ?>

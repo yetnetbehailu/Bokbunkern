@@ -34,17 +34,25 @@ body {
     margin: 0;
 }
 
+/**
+ * Footer layout
+ *
+ * Ensures footer stays at the bottom of the page
+ * even when content does not fill the entire viewport
+ */
 body {
     display: flex;
     flex-direction: column;
 
-    font-size: 1rem; /* 16px default */
+    font-size: 1rem;
+    /* 16px default */
     line-height: 1.6;
     font-family: var(--primary-font);
 }
 
 main {
     flex: 1;
+    /* Pushes the footer down */
 }
 
 h1,
@@ -54,11 +62,19 @@ h3 {
 }
 
 /* ===========================
-   Homepage
+   Homepage (Yeti)
 ============================== */
 
 /* Navbar styling
    ===========================*/
+
+/**
+ * Sticky navbar
+ *
+ * TODO: Fix the disruption with sticky navbar not working as intended 
+ * + include scroll margin to not cover section headlines
+ */
+
 .logo-text {
     font-size: 1.8rem;
     font-weight: 500;
@@ -83,6 +99,7 @@ h3 {
 }
 
 .nav-link.active::after {
+    /* Decorative underline for the active navigation link */
     content: "";
     position: absolute;
     left: 0.5rem;
@@ -131,6 +148,7 @@ h3 {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    /* Fills the entire viewport */
     display: flex;
     align-items: center;
 }
@@ -169,6 +187,8 @@ h3 {
     max-width: 100%;
     height: auto;
     width: 300px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
 }
 
 /* ===========================
@@ -210,6 +230,7 @@ h3 {
     margin-left: 5.5rem;
 }
 
+/* Decorative hover animation for the explore arrow */
 .explore-arrow {
     width: 75px;
     height: auto;
@@ -241,12 +262,12 @@ h3 {
     font-size: 1.5rem;
 }
 
-/* Skapar en egen CSS variabel för ramen runt newsletter input och "Gå med" knappen */
+/* Creates custom CSS variable for the border around newsletter input and button */
 .newsletter-row {
     --newsletter-border: var(--dark-lilac);
 }
 
-/* Input använder variabeln */
+/* Newsletter input uses the custom variable */
 #newsletter-email {
     border-radius: 0;
     border: 1px solid var(--newsletter-border);
@@ -258,8 +279,7 @@ h3 {
     color: var(--white);
     transition: background-color 0.25s ease, color 0.25s ease;
     border-radius: 0;
-    flex-shrink: 0;
-    /* Hindrar knappen från att krympa i flex-raden */
+    flex-shrink: 0; /* Prevent button from shrinking in the flex-row */
     padding: 0.8rem 1rem;
 }
 
@@ -268,8 +288,8 @@ h3 {
     color: var(--light-yellow);
 }
 
-/* När "Gå med" knappen hovras ändras ram färgen på den egna CSS variabeln */
 .newsletter-row:has(.btn-newsletter:hover) {
+    /* When newsletter button hovered custom CSS variable for the border color is updated */
     --newsletter-border: var(--darkest-lilac);
 }
 
@@ -321,6 +341,11 @@ h3 {
 /* ===========================
     Member reviews section
 ============================== */
+/**
+ * Reviews carousel
+ *
+ * TODO: Create dynamic carousel
+ */
 .member-reviews {
     background-color: var(--light-lilac);
     color: var(--darkest-lilac);
@@ -425,8 +450,7 @@ h3 {
 }
 
 .footer-links a.active {
-    pointer-events: none;
-    /* Går inte att klicka länken */
+    pointer-events: none; /* None clickable */
     color: var(--darkest-lilac);
     font-weight: 700;
 }
@@ -461,7 +485,6 @@ h3 {
     font-size: 0.9rem;
     color: var(--darkest-lilac);
 }
-
 
 /* ===========================
    Books page (Mina)
