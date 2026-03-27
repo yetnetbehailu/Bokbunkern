@@ -19,10 +19,10 @@
                     </p>
                 </div>
 
-                <!-- Dynamically generates footer navigation links based on $navLinks array -->
                 <div class="col-md-4">
                     <h4 class="footer-heading">Länkar</h4>
                     <ul class="footer-links list-unstyled">
+                        <!-- Dynamically generates footer navigation links based on $navLinks array -->
                         <?php foreach ($navLinks as $file => $label) {
                             if ($current === $file) {
                                 echo '<li><a href="' . $file . '" class="active">' . $label . '</a></li>';
